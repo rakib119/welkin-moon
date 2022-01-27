@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/revolution/layers.css">
     <!-- Revolution Navigation Styles -->
     <link rel="stylesheet" href="{{asset('assets')}}/css/revolution/navigation.css">
+    @yield('css')
 </head>
 <body>
 <main>
@@ -56,7 +57,7 @@
                         <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
                             <li><a href="{{route('home')}}" title="">Home</a></li>
                             <li><a href="{{route('home')}}" title="">About Us</a></li>
-                            <li><a href="{{route('home')}}" title="">Our Team</a></li>
+                            <li><a href="{{route('team')}}" title="">Our Team</a></li>
                             <li><a href="contact.html" title="">Contacts</a></li>
                             <li><a href="contact.html" title="">Login</a></li>
                             <li><a href="contact.html" title="">Registration</a></li>
@@ -80,7 +81,7 @@
             <ul class="mb-0 list-unstyled w-100">
                 <li><a href="{{route('home')}}" title="">Home</a></li>
                 <li><a href="{{route('home')}}" title="">About Us</a></li>
-                <li><a href="{{route('home')}}" title="">Our Team</a></li>
+                <li><a href="{{route('team')}}" title="">Our Team</a></li>
                 <li><a href="contact.html" title="">Contacts</a></li>
                 <li><a href="contact.html" title="">Login</a></li>
                 <li><a href="contact.html" title="">Registration</a></li>
@@ -112,11 +113,12 @@
                             <div class="widget text-center w-100">
                                 <h4>Company Information</h4>
                                 <ul class="footer-contact-lisst list-unstyled mb-0 w-100">
-                                    <li> <a href="">About Us </a></li>
-                                    <li><a href="" >Our Team  </a></li>
-                                    <li><a href=""> Our Project </a></li>
-                                    <li><a href=""> Privacy Policy</a></li>
-                                    <li><a href="" > Contact Us  </a></li>
+                                    <li><a href="{{route('home')}}" title="">Home</a></li>
+                                    <li><a href="{{route('home')}}" title="">About Us</a></li>
+                                    <li><a href="{{route('team')}}" title="">Our Team</a></li>
+                                    <li><a href="contact.html" title="">Contacts</a></li>
+                                    <li><a href="contact.html" title="">Login</a></li>
+                                    <li><a href="contact.html" title="">Registration</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -209,5 +211,7 @@
 <script src="{{asset('assets')}}/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
 <script src="{{asset('assets')}}/js/revolution/extensions/revolution.extension.video.min.js"></script>
 <script src="{{asset('assets')}}/js/revolution/revolution-init.js"></script>
+
+@yield('javascript')
 </body>
 </html>

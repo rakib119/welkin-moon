@@ -707,6 +707,32 @@
     </div>
 </section>
 <section>
+    <div class="w-100 pt-110 pb-80 position-relative">
+        <div class="container">
+            <div class="sec-title text-center w-100 position-relative">
+                <h2 class="mb-0"><span>Latest From</span> Blog</h2>
+                <i class="btm-ln bg-color14"></i>
+            </div>
+            <div class="owl-carousel owl-theme">
+                <div class="blog-wrap list-view d-inline-block position-relative w-100">
+                    <div class="post-box schm-14 brd-rd15 w-100">
+                        <div class="post-img overflow-hidden position-relative w-100">
+                            <a href="blog-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/post-img1-6.jpg" alt="Post Image 6" height="329" width="585"></a>
+                            <span class="post-date brd-rd15 text-center position-absolute text-uppercase"><i>30</i>May</span>
+                        </div>
+                        <div class="post-info w-100">
+                            <span class="post-cate d-block text-uppercase"><a href="javascript:void(0);" title="">Marketing</a></span>
+                            <h3 class="mb-0"><a href="blog-detail.html" title="">Elegant style</a></h3>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget orci non nunc iaculis lobortis. Vestibulum pretium...</p>
+                            <a class="simple-link d-inline-block text-uppercase" href="blog-detail.html" title="">Read More<i class="flaticon-right-arrow text-color14"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
     <div class="w-100 pt-135 gry pb-90 position-relative">
         <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-9.png);"></div>
         <div class="particles-wrap position-absolute w-100">
