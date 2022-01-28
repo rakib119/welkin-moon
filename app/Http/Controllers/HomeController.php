@@ -25,17 +25,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $teams= Team::all();
-        return view('fontend.index',compact('teams'));
+        $teams = Team::all();
+        $ceo = Team::where('post', 'Chief Director')->first();
+        return view('fontend.index', compact('teams', 'ceo'));
     }
     public function about()
     {
-        $about= Slider::where('id', '1')->first();
-        return view('fontend.about',compact('about'));
+        $about = Slider::where('id', '1')->first();
+        return view('fontend.about', compact('about'));
     }
     public function team()
     {
-        $teams= Team::all();
-        return view('fontend.team',compact('teams'));
+        $teams = Team::all();
+        return view('fontend.team', compact('teams'));
+    }
+    public function ourProjects()
+    {
+        return view('fontend.projects');
     }
 }
