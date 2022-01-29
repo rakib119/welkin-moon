@@ -370,6 +370,7 @@ $title = 'Home';
             </div>
         </div>
     </section>
+
     <section>
         <div class="w-100 pt-170 pb-120 position-relative">
             <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-1.png);"></div>
@@ -423,6 +424,7 @@ $title = 'Home';
             </div>
         </div>
     </section>
+    <!-- CCD Message and Projects  -->
     <section>
         <div class="w-100 pt-120 pb-120 position-relative">
             <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-2.png);"></div>
@@ -496,7 +498,7 @@ $title = 'Home';
                                 </span>
                                 <div class="extend-serv-box-inner">
                                     <i class="icon-015-target text-color8"></i>
-                                    <h4 class="mb-0 text-uppercase">Marketing <br> Department</h4>
+                                    <h4 class="mb-0 text-uppercase">Welkin Moon  <br> Social Media</h4>
                                 </div>
                             </div>
                         </div>
@@ -513,7 +515,7 @@ $title = 'Home';
                                 </span>
                                 <div class="extend-serv-box-inner">
                                     <i class="icon-022-analysis-1 text-color8"></i>
-                                    <h4 class="mb-0 text-uppercase">Analytics <br> Office</h4>
+                                    <h4 class="mb-0 text-uppercase">Welkin Moon  <br> Restaurants</h4>
                                 </div>
                             </div>
                         </div>
@@ -530,7 +532,7 @@ $title = 'Home';
                                 </span>
                                 <div class="extend-serv-box-inner">
                                     <i class="icon-016-customer-review text-color8"></i>
-                                    <h4 class="mb-0 text-uppercase">Customer <br> Service</h4>
+                                    <h4 class="mb-0 text-uppercase">Welkin Moon <br> Freelancing Marketplace</h4>
                                 </div>
                             </div>
                         </div>
@@ -556,7 +558,7 @@ $title = 'Home';
             </div>
         </div>
     </section>
-    <section>
+    {{-- <section>
         <div class="w-100 pt-110 pb-100 position-relative">
             <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-9.png);"></div>
             <div class="particles-wrap position-absolute w-100">
@@ -637,8 +639,87 @@ $title = 'Home';
                 </div><!-- Testimonials Wrap -->
             </div>
         </div>
-    </section>
+    </section> --}}
+    <!-- Teams Slider -->
     <section>
+        <div class="w-100 pt-80 pb-110 position-relative">
+            <div class="particles-wrap position-absolute w-100">
+                <div id="particle-2" class="particles-js top_left mx-w50 w-100" data-color="#4f66db" data-size="15"
+                    data-count="3" data-speed="2" data-hide="767" data-shape="circle" data-mode="bounce">
+                    <canvas></canvas>
+                </div>
+            </div><!-- Particles Wrap -->
+            <div class="container">
+                <div class="testi-wrap position-relative w-100">
+                    <div class="row justify-content-center align-items-center">
+                        <div class="testi-inner schm-17 w-100">
+                            <div class="row testi-caro3">
+                                @forelse ( $teams->where('is_featured',1) as $team)
+                                    <div class="blog-wrap list-view d-inline-block position-relative w-100">
+                                        <div class="post-box schm-14 brd-rd15 w-100">
+                                            <div class="post-img  position-relative"
+                                                style=" display: flex;justify-content: center;flex-wrap: wrap;">
+                                                <a href="javascript:void(0)"
+                                                    style="height: 550px; width: auto; overflow: hidden;"><img
+                                                        class=" w-100"
+                                                        src="{{ asset('assets/images/teams') }}/{{ $team->img }}"
+                                                        alt="Image not found"
+                                                        style="width: 100%; object-fit: cover;"></a>
+                                            </div>
+                                            <div class=" w-100">
+                                                <h3 class="mt-3" style="color: var(--color17)">
+                                                    {{ $team->name }}</h3>
+                                                <span class="post-cate d-block text-uppercase"><a
+                                                        href="javascript:void(0);">{{ $team->post }}</a></span>
+
+                                                <p class="mt-2 mb-0 px-2">{!! $team->description !!}</p>
+                                                <div
+                                                    class="social-links2 d-flex flex-wrap align-items-left justify-content-left w-100">
+                                                    <a href="{{ $team->facebook }}" title="Facebook" target="_blank">
+                                                        <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg">
+                                                            <g>
+                                                                <path
+                                                                    d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                        <i class="flaticon-facebook"></i>
+                                                    </a>
+                                                    <a href="{{ $team->twitter }}" title="Twitter" target="_blank">
+                                                        <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg">
+                                                            <g>
+                                                                <path
+                                                                    d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                        <i class="flaticon-twitter"></i>
+                                                    </a>
+                                                    <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank">
+                                                        <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg">
+                                                            <g>
+                                                                <path
+                                                                    d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z">
+                                                                </path>
+                                                            </g>
+                                                        </svg>
+                                                        <i class="flaticon-linkedin"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                @empty
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- <section>
         <div class="w-100 pt-110 pb-80 position-relative">
             <div class="container">
                 <div class="sec-title text-center w-100 position-relative">
@@ -750,5 +831,5 @@ $title = 'Home';
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

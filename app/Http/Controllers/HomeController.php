@@ -43,4 +43,8 @@ class HomeController extends Controller
     {
         return view('fontend.projects');
     }
+    public function contactUs()
+    {
+        return view('fontend.contact');
+    }
 }

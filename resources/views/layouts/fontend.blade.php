@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/css/slick.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/responsive.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-
     <!-- Revolution Style Sheets -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/revolution/settings.css">
     <!-- Revolution Layers Styles -->
