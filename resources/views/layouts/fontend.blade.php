@@ -31,7 +31,7 @@
 <body>
     <main>
         <header class="style1 w-100">
-            <div class="topbar bg-color4 w-100">
+            {{-- <div class="topbar bg-color4 w-100">
                 <div class="container">
                     <div class="topbar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
                         <ul class="top-info-links d-inline-flex flex-wrap align-items-center list-unstyled mb-0">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-            </div><!-- Topbar -->
+            </div><!-- Topbar --> --}}
             <div class="menubar w-100">
                 <div class="container">
                     <div class="menubar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
@@ -66,11 +66,16 @@
                             <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
                                 <li><a href="{{ route('home') }}" title="">Home</a></li>
                                 <li><a href="{{ route('about') }}" title="">About Us</a></li>
-                                <li><a href="{{ route('team') }}" title="">Our Team</a></li>
+                                <li><a href="{{ route('ourteam') }}" title="">Our Team</a></li>
                                 <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                                 <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
-                                <li><a href="{{ route('login') }}" title="">Login</a></li>
-                                <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                                @if (Auth::check())
+                                    <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                                @else
+                                    <li><a href="{{ route('login') }}" title="">Login</a></li>
+                                    <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                                @endif
+
                             </ul>
                         </nav>
                     </div>
@@ -88,11 +93,15 @@
                         <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
                             <li><a href="{{ route('home') }}" title="">Home</a></li>
                             <li><a href="{{ route('about') }}" title="">About Us</a></li>
-                            <li><a href="{{ route('team') }}" title="">Our Team</a></li>
+                            <li><a href="{{ route('ourteam') }}" title="">Our Team</a></li>
                             <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                             <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
-                            <li><a href="{{ route('login') }}" title="">Login</a></li>
-                            <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                            @if (Auth::check())
+                                <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                            @else
+                                <li><a href="{{ route('login') }}" title="">Login</a></li>
+                                <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>
@@ -119,11 +128,15 @@
                 <ul class="mb-0 list-unstyled w-100">
                     <li><a href="{{ route('home') }}" title="">Home</a></li>
                     <li><a href="{{ route('about') }}" title="">About Us</a></li>
-                    <li><a href="{{ route('team') }}" title="">Our Team</a></li>
+                    <li><a href="{{ route('ourteam') }}" title="">Our Team</a></li>
                     <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                     <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
-                    <li><a href="{{ route('login') }}" title="">Login</a></li>
-                    <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                    @if (Auth::check())
+                      <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                     @else
+                        <li><a href="{{ route('login') }}" title="">Login</a></li>
+                        <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                     @endif
                 </ul>
             </div><!-- Responsive Menu -->
         </div><!-- Responsive Header -->
@@ -162,11 +175,15 @@
                                     <ul class="footer-contact-lisst list-unstyled mb-0 w-100">
                                         <li><a href="{{ route('home') }}" title="">Home</a></li>
                                         <li><a href="{{ route('about') }}" title="">About Us</a></li>
-                                        <li><a href="{{ route('team') }}" title="">Our Team</a></li>
+                                        <li><a href="{{ route('ourteam') }}" title="">Our Team</a></li>
                                         <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                                         <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
-                                        <li><a href="{{ route('login') }}" title="">Login</a></li>
-                                        <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                                        @if (Auth::check())
+                                            <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                                        @else
+                                            <li><a href="{{ route('login') }}" title="">Login</a></li>
+                                            <li><a href="{{ route('register') }}" title="">Registration</a></li>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>

@@ -650,6 +650,10 @@ $title = 'Home';
                 </div>
             </div><!-- Particles Wrap -->
             <div class="container">
+                <div class="sec-title text-center w-100 position-relative">
+                    <h2 class="mb-0"><br> Our Team</h2>
+                    <i class="btm-ln bg-color14"></i>
+                </div>
                 <div class="testi-wrap position-relative w-100">
                     <div class="row justify-content-center align-items-center">
                         <div class="testi-inner schm-17 w-100">

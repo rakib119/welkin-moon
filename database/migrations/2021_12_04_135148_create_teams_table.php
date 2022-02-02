@@ -15,6 +15,18 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type');
+            $table->string('img');
+            $table->string('post');
+            $table->integer('is_featured')->default(0);
+            $table->integer('in_home')->default(0);
+            $table->text('description');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('linkedin');
+            $table->integer('created_by');
+            $table->integer('updated_by')->nullable();
             $table->timestamps();
         });
     }

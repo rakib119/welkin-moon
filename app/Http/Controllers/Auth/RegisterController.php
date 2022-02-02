@@ -54,10 +54,11 @@ class RegisterController extends Controller
             'lastname' => 'required',
             'username' => 'required|alpha_dash|max:255|unique:users',
             'email' => 'required|email|unique:users',
-            'phone' => 'required|numeric|phone|unique:users',
+            'phone' => 'required|numeric|unique:users',
             'password' => 'required|confirmed|min:6',
             'gender' => 'required',
             'birthday' => 'required',
+            
         ]);
     }
 

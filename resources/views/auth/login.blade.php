@@ -4,6 +4,12 @@
     <div class="w-100 pt-130 pb-70 position-relative">
         <div class="fixed-bg back-size-cont bg-norepeate"
             style="background-image: url(assets/images/bg-shp-10.png);"></div>
+            <div class="particles-wrap position-absolute w-100">
+                <div id="particle-3" class="particles-js w-100" data-color="#fff" data-size="2" data-linked="1"
+                    data-count="70" data-speed="5" data-hide="767" data-shape="circle" data-mode="out">
+                    <canvas></canvas>
+                </div>
+            </div>
         <div class="container">
             <div class="sec-title text-white text-center w-100 position-relative">
                 <h2 class="mb-0"> {{ __('Login') }}</h2>
@@ -12,22 +18,23 @@
             <div class="cnt-wrap text-center position-relative w-100">
 
                 <form class="w-100 d-inline-block" method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="form-group w-100">
                         <div class="response w-100"></div>
                     </div>
                     <div class="row mrg20">
-                        <div class="col-md-6 col-sm-6 col-lg-6">
+                        {{-- <div class="col-md-6 col-sm-6 col-lg-6">
                             <div class="field-box w-100">
                                 <input class="fname" type="text" name="fname" placeholder="User Name" autofocus
                                     required>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-lg-6">
+                        </div> --}}
+                        <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="field-box w-100">
                                 <input class="email @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email Address"
                                 name="email" value="{{ old('email') }}" required autocomplete="email">
                                     @error('email')
-                                        <span class="invalid-feedback" role="alert">
+                                        <span class="invalid-feedback text-left" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
@@ -35,10 +42,10 @@
                         </div>
                         <div class="col-md-12 col-sm-12 col-lg-12">
                             <div class="field-box w-100">
-                                <input class="password  @error('password') is-invalid @enderror" type="pasword" name="password"
+                                <input class="password  @error('password') is-invalid @enderror" type="password" name="password"
                                 required autocomplete="current-password" placeholder="Password" required>
                                 @error('password')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback text-left" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror

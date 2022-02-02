@@ -96,7 +96,7 @@ $title = 'Our Team';
                     <div class="sec-title text-center w-100 position-relative">
                         <h2 class="mb-0"><br> Our Team</h2>
                         <i class="btm-ln bg-color14"></i>
-                    </div><!-- Sec Title -->
+                    </div>
                     <div class="testi-wrap position-relative w-100">
                         <div class="row schm-14 testi-caro2">
                             @foreach ($teams->where('is_featured', 0) as $team)

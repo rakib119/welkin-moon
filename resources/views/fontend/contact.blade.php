@@ -66,8 +66,52 @@
         <div class="container">
             <div class="contact-wrap position-relative w-100">
                 <div class="row mrg30">
-
-                    <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="col-md-5 col-sm-12 col-lg-4">
+                        <div class="get-in-touch-wrap bg-color11 brd-rd20 mt-40 position-relative overflow-hidden w-100">
+                            <h2 class="mb-0">Get in Touch</h2>
+                            <p class="mb-0">SEOES is a USA search engine marketing agency, that deliver digital</p>
+                            <div class="contact-info-box mt-40 d-flex flex-wrap w-100">
+                                <i class="flaticon-facebook-placeholder-for-locate-places-on-maps"></i>
+                                <div class="contact-info-inner">
+                                    <h5 class="mb-0">Visit Us:</h5>
+                                    <p class="mb-0">27 Division St, New York, NY 10002, USA</p>
+                                </div>
+                            </div>
+                            <div class="contact-info-box mt-20 d-flex flex-wrap w-100">
+                                <i class="flaticon-message-closed-envelope"></i>
+                                <div class="contact-info-inner">
+                                    <h5 class="mb-0">Mail Us:</h5>
+                                    <a href="mailto:info@example.com" title="">info@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-box mt-20 d-flex flex-wrap w-100">
+                                <i class="icon-037-smartphone"></i>
+                                <div class="contact-info-inner">
+                                    <h5 class="mb-0">Phone Us:</h5>
+                                    <a href="tel:(305) 222-3333" title="">+(305) 222-3333</a>
+                                </div>
+                            </div>
+                            <div class="social-links2 d-flex flex-wrap align-items-center w-100">
+                                <a href="https://www.facebook.com/" title="Facebook" target="_blank">
+                                    <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg"><g><path d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z"></path></g></svg>
+                                    <i class="flaticon-facebook"></i>
+                                </a>
+                                <a href="https://twitter.com/" title="Twitter" target="_blank">
+                                    <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg"><g><path d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z"></path></g></svg>
+                                    <i class="flaticon-twitter"></i>
+                                </a>
+                                <a href="https://youtube.com/" title="Youtube" target="_blank">
+                                    <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg"><g><path d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z"></path></g></svg>
+                                    <i class="flaticon-youtube"></i>
+                                </a>
+                                <a href="https://linkedin.com/" title="Linkedin" target="_blank">
+                                    <svg class="svg_shape" xmlns="http://www.w3.org/2000/svg"><g><path d="M54.8,1.3l35.5,20.3c3,1.7,4.8,4.8,4.8,8.2v40.6c0,3.4-1.8,6.5-4.8,8.2L54.8,98.7c-3,1.7-6.6,1.7-9.5,0 L9.8,78.5c-3-1.7-4.8-4.8-4.8-8.2V29.7c0-3.4,1.8-6.5,4.8-8.2L45.2,1.3C48.2-0.4,51.8-0.4,54.8,1.3z"></path></g></svg>
+                                    <i class="flaticon-linkedin"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-sm-12 col-lg-8">
                         <div class="contact-form-wrap mt-40 w-100">
                             <div class="sec-title w-100 position-relative">
                                 <h2 class="mb-0">Send a Message</h2>
