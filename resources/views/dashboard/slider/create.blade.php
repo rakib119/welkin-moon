@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#description').summernote({
+            $('#content').summernote({
                 popover: {
                      image: [
 
@@ -57,12 +57,12 @@
                                         <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
                                     </div>
                                     <div class="form py-3">
-                                        <form action="{{ route('Slider.store') }}" enctype="multipart/form-data" method="post">
+                                        <form action="{{ route('slider.store') }}" enctype="multipart/form-data" method="post">
                                             @csrf
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="name">title
+                                                        <label class="form-label" for="name">Title
                                                             <span class="text-danger">*</span></label>
                                                         <input id="title" type="text" class="form-control"
                                                             value="{{ old('title') }}" name="title"
@@ -74,21 +74,23 @@
                                                 </div>
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="img">Image
+                                                        <label class="form-label" for="button_name">Button Name
                                                             <span class="text-danger">*</span></label>
-                                                        <input type="file" accept=".jpg,.png" name="img" id="img" class="form-control">
-                                                        @error('img')
+                                                        <input id="button_name" type="text" class="form-control"
+                                                            value="{{ old('button_name') }}" name="button_name"
+                                                            placeholder="Enter slider button name" >
+                                                        @error('button_name')
                                                             <h6 class="text-danger"> {{ $message }}</h6>
                                                         @enderror
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <div class="mb-3">
-                                                        <label class="form-label" >Description
+                                                        <label class="form-label" >Content
                                                             <span class="text-danger">*</span></label>
-                                                            <Textarea name="description" id="description"
-                                                             class="form-control">{{ old('description') }}</Textarea>
-                                                        @error('description')
+                                                            <Textarea name="content" id="content"
+                                                             class="form-control">{{ old('content') }}</Textarea>
+                                                        @error('content')
                                                             <h6 class="text-danger"> {{ $message }}</h6>
                                                         @enderror
                                                     </div>

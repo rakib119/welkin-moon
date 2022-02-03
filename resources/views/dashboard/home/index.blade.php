@@ -150,10 +150,8 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Image</th>
-                                    <th>Status</th>
-                                    <th>Action</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -161,13 +159,8 @@
                                 <tr>
                                     <td>{{$loop->index+1}}</td>
                                     <td>{{ $user->name}}</td>
-                                    <td>{{ $user->post}}</td>
-                                    <td><img class="rounded-circle header-profile-user"
-                                        src="{{ asset('dashboard/assets/images/default-profile-picture.jpg') }}" alt="Header Avatar"></td>
-                                    <td>42</td>
-                                    <td><span
-                                            class="badge badge-pill badge-soft-primary font-size-13">{{ $user}}</span>
-                                    </td>
+                                    <td>{{ $user->email}}</td>
+                                    <td>{{ $user->phone}}</td>
                                 </tr>
                                 @endforeach
                             </tbody>

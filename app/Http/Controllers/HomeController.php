@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\faq;
 use App\Models\Slider;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -25,7 +26,8 @@ class HomeController extends Controller
     {
         $teams = Team::all();
         $ceo = Team::where('post', 'Chief Director')->first();
-        return view('fontend.index', compact('teams', 'ceo'));
+        $faqs = faq::all();
+        return view('fontend.index', compact('teams', 'ceo','faqs'));
     }
     public function about()
     {

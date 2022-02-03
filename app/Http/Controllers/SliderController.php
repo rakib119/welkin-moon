@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\slider;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class SliderController extends Controller
 {
@@ -37,7 +39,20 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'content'=>'required',
+            'button_name'=>'required'
+        ]);
+        Slider::insert([
+            'title'=>  $request->title,
+            'content'=>$request->content,
+            'slug'=> Str::slug($request->title) ,
+            'button_name' =>$request->button_name,
+            'created_at' =>Carbon::now(),
+        ]);
+        return redirect('slider')->with('success', 'Slider added successfully');
+
     }
 
     /**
@@ -59,7 +74,7 @@ class SliderController extends Controller
      */
     public function edit(slider $slider)
     {
-        //
+        return view('dashboard.slider.edit',compact('slider'));
     }
 
     /**
@@ -71,7 +86,18 @@ class SliderController extends Controller
      */
     public function update(Request $request, slider $slider)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'content'=>'required',
+            'button_name'=>'required'
+        ]);
+
+        $slider->title =  $request->title;
+        $slider->slug= Str::slug($request->title) ;
+        $slider->button_name =$request->button_name;
+        $slider->content=$request->content;
+        $slider->save();
+        return redirect('slider')->with('success', 'updated successfully');
     }
 
     /**
@@ -82,6 +108,7 @@ class SliderController extends Controller
      */
     public function destroy(slider $slider)
     {
-        //
+        $slider ->delete();
+        return redirect('slider')->with('success', 'Deleted successfully');
     }
 }

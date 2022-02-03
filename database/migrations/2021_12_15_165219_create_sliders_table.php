@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
                 $table->id();
                 $table->longText('content');
                 $table->string('slug', 100)->unique();
+                $table->string('button_name', 30);
                 $table->timestamps();
             });;
         });

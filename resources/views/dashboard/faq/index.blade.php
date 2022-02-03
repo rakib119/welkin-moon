@@ -10,8 +10,8 @@
                          <h4>DashBoard</h4>
                          <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">DashBoard</a></li>
-                            <li class="breadcrumb-item"><a href="javascript: void(0);">Slider</a></li>
-                            <li class="breadcrumb-item active">Slider List</li>
+                            <li class="breadcrumb-item"><a href="javascript: void(0);">Faq</a></li>
+                            <li class="breadcrumb-item active">Faq List</li>
                         </ol>
                      </div>
                  </div>
@@ -26,27 +26,27 @@
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <div>
-                                        <h2 class=" mb-4">Slider List</h2>
+                                        <h2 class=" mb-4">Faq List</h2>
                                     </div>
                                     <div class="float-end d-none d-sm-block">
-                                        <a href="{{route('slider.create')}}" class="btn btn-success">Add Slider</a>
+                                        <a href="{{route('faq.create')}}" class="btn btn-success">Add Faq</a>
                                     </div>
                                 </div>
                                 <table id="myTable" class="table table-centered table-nowrap mb-0">
                                     <thead class="thead-light">
                                         <tr>
                                             <th>SL</th>
-                                            <th>Title</th>
-                                            <th>Button Name</th>
+                                            <th>Question </th>
+                                            <th>Answear </th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ( $sliders as $slider)
+                                        @foreach ( $faqs as $faq)
                                         <tr>
                                             <td>{{$loop->index+1}}</td>
-                                            <td>{{ $slider->title}}</td>
-                                            <td>{{ $slider->button_name}}</td>
+                                            <td>{{ Str::substr($faq->question, 0, 50)."..."}}</td>
+                                            <td>{{ Str::substr($faq->answear, 0, 50)."..." }}</td>
                                             <td >
                                                 <!-- Example single danger button -->
                                                 <div class="btn-group">
@@ -54,13 +54,13 @@
                                                    Action <i class="fas fa-angle-down"></i>
                                                 </button>
                                                     <ul class="dropdown-menu">
-                                                       <li><a class="dropdown-item" href="{{route('slider.edit',$slider->id)}}">Edit</a>
+                                                       <li><a class="dropdown-item" href="{{route('faq.edit',$faq->id)}}">Edit</a>
                                                        <li>
-                                                            <form id="deleteData{{$slider->id}}" action="{{ route('slider.destroy', $slider->id) }}"
+                                                            <form id="deleteData{{$faq->id}}" action="{{ route('faq.destroy', $faq->id) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('delete')
-                                                                <a style="cursor: pointer;"  class="dropdown-item" onclick="deleteData({{$slider->id}})">Delete</a>
+                                                                <a style="cursor: pointer;"  class="dropdown-item" onclick="deleteData({{$faq->id}})">Delete</a>
                                                             </form>
                                                        </li>
                                                     </ul>

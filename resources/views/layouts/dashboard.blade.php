@@ -122,32 +122,31 @@
                                 <li><a href="{{route('team.create')}}">Add Members</a></li>
                             </ul>
                         </li>
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="dripicons-stack"></i>
-                                <span>Add Slider</span>
+                                <i class="fas fa-sliders-h"></i>
+                                <span>Slider</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="#">All Pages</a></li>
+                                <li><a href="{{route('slider.index')}}">Slider List</a></li>
+                            </ul>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('slider.create')}}">Add Slider</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class=" waves-effect">
-                                <i class="dripicons-gear"></i>
-                                <span>Project Management</span>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fas fa-quote-right"></i>
+                                <span>Faq </span>
                             </a>
-                        </li><li>
-                            <a href="#" class=" waves-effect">
-                                <i class="dripicons-gear"></i>
-                                <span>About Mangement</span>
-                            </a>
-                        </li><li>
-                            <a href="#" class=" waves-effect">
-                                <i class="dripicons-gear"></i>
-                                <span>Settings</span>
-                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('faq.index')}}">Faq List</a></li>
+                            </ul>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('faq.create')}}">Add Faq</a></li>
+                            </ul>
                         </li>
+
                     </ul>
                 </div>
                 <!-- Sidebar -->

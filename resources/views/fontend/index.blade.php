@@ -225,7 +225,6 @@ $title = 'Home';
                                 <img height="700" width="760" src="{{ asset('assets') }}/images/slide3-shp1.png"
                                     alt="Slide 3 Shape 1">
                             </div>
-
                             <!-- Layer NR. 2 -->
                             <div class="tp-caption img-layer tp-resizeme rs-parallaxlevel-2" id="slide3-layer-2"
                                 data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
@@ -370,57 +369,35 @@ $title = 'Home';
             </div>
         </div>
     </section>
-
+    {{-- Faq Section --}}
     <section>
-        <div class="w-100 pt-170 pb-120 position-relative">
-            <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-1.png);"></div>
-            <div class="particles-wrap position-absolute w-100">
-                <div id="particle-1" class="particles-js top_right w-100" data-color="#3E4A59" data-size="80"
-                    data-count="0.5" data-speed="3" data-hide="1500" data-shape="image" data-mode="bounce"
-                    data-image-url="{{ asset('assets') }}/images/particle-1.png" data-image-width="150"
-                    data-image-height="150">
-                    <canvas></canvas>
-                </div>
-            </div><!-- Particles Wrap -->
+        <div class="w-100 pt-50 pb-120 position-relative">
             <div class="container">
-                <div class="market-facts-wrap position-relative w-100">
-                    <div class="row align-items-end">
-                        <div class="col-md-12 col-sm-12 col-lg-6">
-                            <div class="mckp-img text-center tilt w-100" data-max_tilt="10" data-perspective="1000"
-                                data-scale="1" data-speed="700"><img class="img-fluid"
-                                    src="{{ asset('assets') }}/images/resources/market-fact-mckp.png"
-                                    alt="Market Facts Mockup" height="614" width="565"></div>
+                <div class="crtv-chlng-psn-wrap position-relative w-100">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-6 ">
+                            <div class="mckp-img text-center tilt w-100" data-max_tilt="10" data-perspective="1000" data-scale="1" data-speed="700"><img class="img-fluid" src="{{ asset('assets') }}/images/resources/market-fact-mckp.png" alt="Creative Challenges Passion Mockup" height="473" width="523"></div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-lg-6">
                             <div class="text-box w-100">
                                 <div class="sec-title w-100 position-relative">
-                                    <span class="d-block text-color3 text-uppercase">Features</span>
-                                    <h2 class="mb-0">Important Features <span>for Digital Marketing</span></h2>
+                                    <h2 class="mb-0">Frequently Asked  <br> Questions</h2>
                                     <i class="btm-ln bg-color3"></i>
-                                </div><!-- Sec Title -->
-                                <p class="mb-0">Nam quis accumsan risus. Aenean id volutpat nibh. Nullam mollis
-                                    elit pellentesque, gravida turpis id, aliquam magna. Donec dictum tortor eu arcu lacinia
-                                    rutrum.</p>
-                                <div class="fact-wrap w-100">
-                                    <ul class="fact-list d-flex flex-wrap align-items-center mb-0 list-unstyled">
-                                        <li>
-                                            <div class="fact-box w-100">
-                                                <h3 class="mb-0 text-color3"><span class="counter">142</span>k</h3>
-                                                <h5 class="mb-0">Successful Projects</h5>
+                                </div>
+                                <div class="toggle schm-14 w-100" id="toggle">
+                                    @foreach ($faqs as $faq )
+                                        <div class="toggle-item position-relative w-100">
+                                            <h4 class="mb-0 position-relative"><i></i>{{$faq->question}}</h4>
+                                            <div class="toggle-content w-100">
+                                                <p class="mb-0">{{$faq->answear}}</p>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="fact-box w-100">
-                                                <h3 class="mb-0 text-color3"><span class="counter">1859</span></h3>
-                                                <h5 class="mb-0">Satisfied Customers</h5>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                        </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div><!-- Market Facts Wrap -->
+                </div>
             </div>
         </div>
     </section>
@@ -433,9 +410,9 @@ $title = 'Home';
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-lg-6"
                             style=" display: flex;justify-content: center;flex-wrap: wrap;">
-                            <div class="mckp-img text-center tilt " style="height: 600px; width: auto; overflow: hidden;"
+                            <div class="mckp-img text-center tilt shadow-sm p-3 mb-5 bg-body rounded" style="height: 600px; width: auto; overflow: hidden;"
                                 data-max_tilt="10" data-perspective="1000" data-scale="1" data-speed="700"><img
-                                    class="img-fluid" src="{{ asset('assets/images/teams') }}/{{ $ceo->img }}"
+                                    class="img-fluid " src="{{ asset('assets/images/teams') }}/{{ $ceo->img }}"
                                     alt="Structure Mockup" style="width: 100%; object-fit: cover;">
                             </div>
                         </div>
@@ -723,117 +700,54 @@ $title = 'Home';
             </div>
         </div>
     </section>
-    {{-- <section>
-        <div class="w-100 pt-110 pb-80 position-relative">
-            <div class="container">
-                <div class="sec-title text-center w-100 position-relative">
-                    <h2 class="mb-0"><span>Latest From</span> Blog</h2>
-                    <i class="btm-ln bg-color14"></i>
-                </div>
-                <div class="owl-carousel owl-theme">
-                    <div class="blog-wrap list-view d-inline-block position-relative w-100">
-                        <div class="post-box schm-14 brd-rd15 w-100">
-                            <div class="post-img overflow-hidden position-relative w-100">
-                                <a href="javascript:void(0)" title=""><img class="img-fluid w-100"
-                                        src="assets/images/resources/post-img1-6.jpg" alt="Post Image 6" height="329"
-                                        width="585"></a>
-                                <span
-                                    class="post-date brd-rd15 text-center position-absolute text-uppercase"><i>30</i>May</span>
-                            </div>
-                            <div class="post-info w-100">
-                                <span class="post-cate d-block text-uppercase"><a href="javascript:void(0);"
-                                        title="">Marketing</a></span>
-                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Elegant style</a></h3>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                                    eget orci non nunc iaculis lobortis. Vestibulum pretium...</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)"
-                                    title="">Read
-                                    More<i class="flaticon-right-arrow text-color14"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @if ($teams->where('in_home', 1)->count()>1)
     <section>
-        <div class="w-100 pt-50 pb-20 position-relative">
-            <div class="fixed-bg" style="background-image: url(assets/images/bg-1.png);"></div>
+        <div class="w-100 pt-135 gry pb-90 position-relative">
+            <div class="fixed-bg" style="background-image: url(assets/images/bg-shp-9.png);"></div>
             <div class="particles-wrap position-absolute w-100">
-                <div id="particle-2" class="particles-js top_left mx-w50 w-100" data-color="#3E4A59" data-size="70"
-                    data-count="2" data-speed="2" data-hide="767" data-shape="image" data-mode="bounce"
-                    data-image-url="{{ asset('assets') }}/images/particle-2.png" data-image-width="133"
-                    data-image-height="133">
+                <div id="particle-3" class="particles-js top_right w-100" data-color="#3E4A59" data-size="50" data-count="1" data-speed="3" data-hide="767" data-shape="image" data-mode="bounce" data-image-url="assets/images/particle-6.png" data-image-width="150" data-image-height="150">
                     <canvas></canvas>
                 </div>
-            </div><!-- Particles Wrap -->
-            <div class="container">
-                <div class="market-wrap position-relative w-100">
-                    <div class="row align-items-center">
-                        <div class="col-md-12 col-sm-12 col-lg-6 order-lg-1">
-                            <div class="mckp-img text-center tilt w-100" data-max_tilt="10" data-perspective="1000"
-                                data-scale="1" data-speed="700"><img class="img-fluid"
-                                    src="{{ asset('assets') }}/images/resources/marketing-strg-mckp.png"
-                                    alt="Marketing Strategy Mockup" height="434" width="574"></div>
-                        </div>
-                        <div class="col-md-12 col-sm-12 col-lg-6">
-                            <div class="text-box text-white w-100">
-                                <div class="sec-title w-100 position-relative">
-                                    <h2 class="mb-0">Marketing <span>Strategies</span></h2>
-                                    <i class="btm-ln bg-color3"></i>
-                                </div><!-- Sec Title -->
-                                <p class="mb-0">Nam quis accumsan risus. Aenean id volutpat nibh. Nullam mollis
-                                    elit pellentesque, gravida turpis id, aliquam magna. Donec dictum tortor <br> eu arcu
-                                    lacinia rutrum.</p>
-                                <a class="thm-btn rounded-pill d-inline-block" href="about.html" title="">Make Your
-                                    Strategy</a>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- Marketing Wrap -->
             </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="w-100 pt-70 pb-100 position-relative">
             <div class="container">
                 <div class="sec-title text-center w-100 position-relative">
-                    <h2 class="mb-0">Team</h2>
-                    <i class="btm-ln bg-color3"></i>
+                    <h2 class="mb-0"><span>What's Our Clients Say</span> <br> About Us</h2>
+                    <i class="btm-ln bg-color14"></i>
                 </div>
-                <div class="team-wrap w-100">
-                    <div class="row mrg30">
-                        @foreach ($teams->where('is_featured', 0) as $team)
-                            <div class="col-md-6 col-sm-6 col-lg-3">
-                                <div class="team-box text-center position-relative w-100">
-                                    <div class="team-img"
-                                        style=" display: flex;justify-content: center;flex-wrap: wrap;">
-                                        <a href="javascript:void(0);"
-                                            style="height: 300px; width: 300px; overflow: hidden;">
-                                            <img class="img-fluid w-100"
-                                                src="{{ asset('assets/images/teams') . '/' . $team->img }}"
-                                                alt="image not found" style="width: 100%; object-fit: cover;">
-                                        </a>
-                                    </div>
-                                    <div class="team-info w-100">
-                                        <h3 class="mb-0">{{ $team->name }}</h3>
-                                        <span class="d-block">{{ $team->post }}</span>
-                                        <div class="social-links v2 d-inline-flex flex-wrap">
-                                            <a href="{{ $team->facebook }}" title="Facebook" target="_blank"><i
-                                                    class="flaticon-facebook"></i></a>
-                                            <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
-                                                    class="flaticon-twitter-letter-logo"></i></a>
-                                            <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
-                                                    class="flaticon-telegram"></i></a>
-                                        </div>
-                                    </div>
+                <div class="testi-wrap position-relative w-100">
+                    <div class="row schm-14 testi-caro2">
+                        @foreach ($teams->where('in_home', 1) as $team)
+                        <div class="col-md-6 col-sm-6 col-lg-6">
+                            <div class="testi-box schm-14 position-relative text-center w-100">
+                                <div class="testi-img d-inline-block overflow-hidden rounded-circle"><img
+                                        class="img-fluid d-inline-block rounded-circle"
+                                        style="height: 120px;width:150px"
+                                        src="{{ asset('assets/images/teams') . '/' . $team->img }}"
+                                        alt="not found">
+                                </div>
+                                <div class="testi-info w-100">
+                                    <h5 class="mb-0">{{ $team->name }}</h5>
+                                    <span class="d-block">{{ $team->post }}</span>
+                                </div>
+                                <div style="text-align: left!important">
+                                    <p class=" mb-0">{!! Str::substr($team->description, 0, 100)  !!}</p>
+                                </div>
+                                <div class="social-links v2 d-inline-flex flex-wrap">
+                                    <a href="{{ $team->facebook }}" title="Facebook" target="_blank"><i
+                                            class="flaticon-facebook"></i></a>
+                                    <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
+                                            class="flaticon-twitter-letter-logo"></i></a>
+                                    <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
+                                            class="flaticon-telegram"></i></a>
                                 </div>
                             </div>
+                        </div>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
+    @endif
+
 @endsection
