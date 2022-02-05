@@ -146,6 +146,18 @@
                                 <li><a href="{{route('faq.create')}}">Add Faq</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Our Project</span>
+                            </a>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('project.index')}}">Project list</a></li>
+                            </ul>
+                            <ul class="sub-menu" aria-expanded="false">
+                                <li><a href="{{route('project.create')}}">Add Project</a></li>
+                            </ul>
+                        </li>
 
                     </ul>
                 </div>

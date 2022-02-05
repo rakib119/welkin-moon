@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Auth;
@@ -34,4 +35,5 @@ Route::get('/contact', [HomeController::class, 'contactUs'])->name('contact_us')
 Route::resource('team', TeamController::class);
 Route::resource('slider', SliderController::class);
 Route::resource('faq', FaqController::class);
+Route::resource('project', ProjectController::class);
 

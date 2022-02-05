@@ -121,7 +121,6 @@ class TeamController extends Controller
      */
     public function update(Request $request, Team $team)
     {
-        if ( auth()->user()->is_admin == 1) {
             $request->validate([
                 'name'=>'required',
                 'img'=>'nullable|mimes:png,jpg',
@@ -131,7 +130,7 @@ class TeamController extends Controller
                 'twitter'=>'required',
                 'linkedin'=>'required',
             ]);
-            if ($request->hasFile($request->file('img'))) {
+            if ($request->hasFile('img')) {
                 unlink(base_path('public/assets/images/teams/' .$team->img));
                 $extension = $request->file('img')->getClientOriginalExtension();
                 $file_name = Str::random(8) . auth()->id() . "." . $extension;
@@ -151,9 +150,7 @@ class TeamController extends Controller
             $team->updated_by =  auth()->id();
             $team->save();
            return redirect('team')->with('success', 'updated successfully');
-        }else {
-            return redirect('/');
-        }
+
 
     }
 
@@ -165,13 +162,9 @@ class TeamController extends Controller
      */
     public function destroy(Team $team)
     {
-        if ( auth()->user()->is_admin == 1) {
             unlink(base_path('public/assets/images/teams/' .$team->img));
             $team->delete();
             return back()->with('success','Deleted successfully');
-        }else {
-            return redirect('/');
-        }
 
     }
 }

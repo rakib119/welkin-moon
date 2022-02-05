@@ -376,7 +376,7 @@ $title = 'Home';
                 <div class="crtv-chlng-psn-wrap position-relative w-100">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-lg-6 ">
-                            <div class="mckp-img text-center tilt w-100" data-max_tilt="10" data-perspective="1000" data-scale="1" data-speed="700"><img class="img-fluid" src="{{ asset('assets') }}/images/resources/market-fact-mckp.png" alt="Creative Challenges Passion Mockup" height="473" width="523"></div>
+                            <div class="mckp-img text-center tilt w-100" data-max_tilt="10" data-perspective="1000" data-scale="1" data-speed="700"><img class="img-fluid" src="{{ asset('assets') }}/images/resources/market-fact-mckp.png" alt="" height="473" width="523"></div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-lg-6">
                             <div class="text-box w-100">

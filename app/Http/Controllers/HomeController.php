@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\faq;
+use App\Models\Project;
 use App\Models\Slider;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -41,7 +42,9 @@ class HomeController extends Controller
     }
     public function ourProjects()
     {
-        return view('fontend.projects');
+        return view('fontend.projects',[
+            'projects'=> Project::all()
+        ]);
     }
     public function contactUs()
     {

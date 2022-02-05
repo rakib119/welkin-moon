@@ -57,44 +57,7 @@ now: '1387461319'
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/js/kinetic.js"></script>
 <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/jquery.final-countdown.js"></script>
-<script>
-    $(document).ready(function() {
-    $('.countdown').final_countdown({
-    start: '1362139200',
-    end: '1388461320',
-    now: '1387461319',
-    selectors: {
-        value_seconds: '.clock-seconds .val',
-        canvas_seconds: 'canvas_seconds',
-        value_minutes: '.clock-minutes .val',
-        canvas_minutes: 'canvas_minutes',
-        value_hours: '.clock-hours .val',
-        canvas_hours: 'canvas_hours',
-        value_days: '.clock-days .val',
-        canvas_days: 'canvas_days'
-    },
-    seconds: {
-        borderColor: '#7995D5',
-        borderWidth: '6'
-    },
-    minutes: {
-        borderColor: '#ACC742',
-        borderWidth: '6'
-    },
-    hours: {
-        borderColor: '#ECEFCB',
-        borderWidth: '6'
-    },
-    days: {
-        borderColor: '#FF9900',
-        borderWidth: '6'
-    }}, function() {
-    // Finish callback
-    });
-    });
-</script>
-
-
+<script src="{{asset('assets/js/timmer.js')}}"> </script>
 @endsection
 @section('main_content')
     <main>
@@ -111,70 +74,78 @@ now: '1387461319'
                         <h2 class="mb-0 mt-5"><span>Our</span> Projects</h2>
                         <i class="btm-ln bg-color3"></i>
                     </div><!-- Sec Title -->
-                    <div class="col-md-6 col-sm-6 col-lg-4">
-                        <div class="post-box brd-rd15 w-100">
-                            <div class="post-img overflow-hidden position-relative w-100 mb-3">
-                                <a href="blog-detail.html" title=""><img class="img-fluid w-100" src="assets/images/resources/post-img1-1.jpg" height="576" width="1024"></a>
-                                <span class="post-date brd-rd15 text-center position-absolute text-uppercase"><i>30</i>May</span>
-                            </div>
-                            <div  style="background-color:rgb(80, 79, 79); border-radius: 3px">
-                                <div  class="clock row py-5">
-                                    <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
-                                        <div class="wrap">
-                                            <div class="inner">
-                                                <div id="canvas_days" class="clock-canvas"></div>
-                                                <div class="text">
-                                                    <span class="val">0</span>
-                                                    <br>
-                                                    <span class="type-days type-time">D</span>
+                    <div class="row ">
+                      @foreach ($projects as $project)
+                        <div class="col-md-6 col-sm-6 col-lg-4">
+                            <div class="post-box brd-rd15 w-100">
+                                <div class="post-info ">
+                                    <div class="position-relative text-center">
+                                        <div class="text-center testi-img d-inline-block overflow-hidden rounded-circle ">
+                                            <img class="img-fluid d-inline-block rounded-circle" src="{{asset("assets/images/projects/$project->project_logo")}}">
+                                        </div>
+                                        <h3 class="mb-0"><a href="javascript:void(0);">{{$project->project_name}}</a></h3>
+                                    </div>
+                                    <p>{{$project->project_description}}</p>
+                                </div>
+
+                                <div  style="background-color:rgb(80, 79, 79); border-radius: 3px">
+                                    <div  class="clock{{$loop->index+1}} row py-2">
+                                        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas_days{{$loop->index+1}}" class="clock-canvas"></div>
+                                                    <div class="text">
+                                                        <span class="val">22</span>
+                                                        <br>
+                                                        <span class="type-days type-time">D</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- hours -->
-                                    <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
-                                        <div class="wrap">
-                                            <div class="inner">
-                                                <div id="canvas_hours" class="clock-canvas"></div>
-                                                <div class="text">
-                                                    <span class="val">0</span>
-                                                    <br>
-                                                    <span class="type-hours type-time">H</span>
+                                        <!-- hours -->
+                                        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas_hours{{$loop->index+1}}" class="clock-canvas"></div>
+                                                    <div class="text">
+                                                        <span class="val">0</span>
+                                                        <br>
+                                                        <span class="type-hours type-time">H</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- minutes -->
-                                    <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
-                                        <div class="wrap">
-                                            <div class="inner">
-                                                <div id="canvas_minutes" class="clock-canvas"></div>
-                                                <div class="text">
-                                                    <span class="val">0</span>
-                                                    <br>
-                                                    <span class="type-minutes type-time">M</span>
+                                        <!-- minutes -->
+                                        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas_minutes{{$loop->index+1}}" class="clock-canvas"></div>
+                                                    <div class="text">
+                                                        <span class="val">0</span>
+                                                        <br>
+                                                        <span class="type-minutes type-time">M</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                        <!-- seconds -->
-                                    <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3 ">
-                                        <div class="wrap">
-                                            <div class="inner">
-                                                <div id="canvas_seconds" class="clock-canvas"></div>
-                                                <div class="text">
-                                                    <span class="val">0</span>
-                                                    <br>
-                                                    <span class="type-seconds type-time">S</span>
+                                            <!-- seconds -->
+                                        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3 ">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas_seconds{{$loop->index+1}}" class="clock-canvas"></div>
+                                                    <div class="text">
+                                                        <span class="val">60</span>
+                                                        <br>
+                                                        <span class="type-seconds type-time">S</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
+                     @endforeach
                 </div>
             </div>
         </section>
