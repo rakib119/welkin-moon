@@ -121,7 +121,7 @@ $title = 'Our Team';
                                 </div>
                             @endforeach
                         </div>
-                    </div><!-- Team Wrap -->
+                    </div>
                 </div>
             </div>
         </section>

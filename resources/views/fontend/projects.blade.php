@@ -38,7 +38,7 @@ $title = 'Our Projects';
     }
     @media (max-width: 767px) {
         .clock-item {
-        margin: 0px 30px 30px 30px;
+
         }
     }
 </style>
@@ -57,23 +57,472 @@ now: '1387461319'
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/js/kinetic.js"></script>
 <script type="text/javascript" src="https://www.jqueryscript.net/demo/Modern-Circular-jQuery-Countdown-Timer-Plugin-Final-Countdown/jquery.final-countdown.js"></script>
-<script src="{{asset('assets/js/timmer.js')}}"> </script>
+{{-- <script src="{{asset('assets/js/timmer.js')}}"> </script> --}}
+<script>
+    $(document).ready(function() {
+    $('.clock1').final_countdown({
+    start: '1362139200',
+    end: '1388461320',
+    now: '1387461319',
+    selectors: {
+        value_seconds: '.clock-seconds .val',
+        canvas_seconds: 'canvas_seconds1',
+        value_minutes: '.clock-minutes .val',
+        canvas_minutes: 'canvas_minutes1',
+        value_hours: '.clock-hours .val',
+        canvas_hours: 'canvas_hours1',
+        value_days: '.day .val',
+        canvas_days: 'canvas_days1',
+
+    },
+    seconds: {
+        borderColor: '#7995D5',
+        borderWidth: '6'
+    },
+    minutes: {
+        borderColor: '#ACC742',
+        borderWidth: '6'
+    },
+    hours: {
+        borderColor: '#ECEFCB',
+        borderWidth: '6'
+    },
+    days: {
+        borderColor: '#FF9900',
+        borderWidth: '6'
+    }}, function() {
+    // Finish callback
+    });
+
+    $('.clock2').final_countdown({
+    start: '1362139200',
+    end: '1388461320',
+    now: '1387461319',
+    selectors: {
+        value_seconds: '.clock-seconds .val',
+        canvas_seconds: 'canvas_seconds2',
+        value_minutes: '.clock-minutes .val',
+        canvas_minutes: 'canvas_minutes2',
+        value_hours: '.clock-hours .val',
+        canvas_hours: 'canvas_hours2',
+        value_days: '.day .val',
+        canvas_days: 'canvas_days2',
+
+    },
+    seconds: {
+        borderColor: '#7995D5',
+        borderWidth: '6'
+    },
+    minutes: {
+        borderColor: '#ACC742',
+        borderWidth: '6'
+    },
+    hours: {
+        borderColor: '#ECEFCB',
+        borderWidth: '6'
+    },
+    days: {
+        borderColor: '#FF9900',
+        borderWidth: '6'
+    }}, function() {
+    // Finish callback
+    });
+
+    $('.clock3').final_countdown({
+    start: '1362139200',
+    end: '1388461320',
+    now: '1387461319',
+    selectors: {
+        value_seconds: '.clock-seconds .val',
+        canvas_seconds: 'canvas_seconds3',
+        value_minutes: '.clock-minutes .val',
+        canvas_minutes: 'canvas_minutes3',
+        value_hours: '.clock-hours .val',
+        canvas_hours: 'canvas_hours3',
+        value_days: '.day .val',
+        canvas_days: 'canvas_days3',
+
+    },
+    seconds: {
+        borderColor: '#7995D5',
+        borderWidth: '6'
+    },
+    minutes: {
+        borderColor: '#ACC742',
+        borderWidth: '6'
+    },
+    hours: {
+        borderColor: '#ECEFCB',
+        borderWidth: '6'
+    },
+    days: {
+        borderColor: '#FF9900',
+        borderWidth: '6'
+    }}, function() {
+    // Finish callback
+    });
+
+//     $('.clock4').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds4',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes4',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours4',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days4',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+//     $('.clock5').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds5',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes5',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours5',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days5',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+//     $('.clock6').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds6',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes6',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours6',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days6',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+//   $('.clock7').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds7',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes7',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours7',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days7',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+//  $('.clock8').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds8',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes8',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours8',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days8',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+//  $('.clock9').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds9',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes9',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours9',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days9',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+// $('.clock10').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds10',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes10',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours10',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days10',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+
+// $('.clock11').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds11',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes11',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours11',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days11',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+// $('.clock12').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds12',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes12',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours12',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days12',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+// $('.clock13').final_countdown({
+//     start: '1362139200',
+//     end: '1388461320',
+//     now: '1387461319',
+//     selectors: {
+//         value_seconds: '.clock-seconds .val',
+//         canvas_seconds: 'canvas_seconds13',
+//         value_minutes: '.clock-minutes .val',
+//         canvas_minutes: 'canvas_minutes13',
+//         value_hours: '.clock-hours .val',
+//         canvas_hours: 'canvas_hours13',
+//         value_days: '.day .val',
+//         canvas_days: 'canvas_days13',
+
+//     },
+//     seconds: {
+//         borderColor: '#7995D5',
+//         borderWidth: '6'
+//     },
+//     minutes: {
+//         borderColor: '#ACC742',
+//         borderWidth: '6'
+//     },
+//     hours: {
+//         borderColor: '#ECEFCB',
+//         borderWidth: '6'
+//     },
+//     days: {
+//         borderColor: '#FF9900',
+//         borderWidth: '6'
+//     }}, function() {
+//     // Finish callback
+//     });
+
+
+    });
+
+
+</script>
 @endsection
 @section('main_content')
     <main>
-        {{-- count down  --}}
         <section>
             <div class="w-100 pt-100 bg-color10 pb-100 position-relative">
                 <div class="particles-wrap position-absolute w-100">
                     <div id="particle-2" class="particles-js top_left mx-w25 w-100" data-color="#3E4A59" data-size="80" data-count="0.5" data-speed="3" data-hide="1500" data-shape="image" data-mode="bounce" data-image-url="assets/images/particle-1.png" data-image-width="150" data-image-height="150">
                         <canvas></canvas>
                     </div>
-                </div><!-- Particles Wrap -->
+                </div>
                 <div class="container">
                     <div class="sec-title text-center w-100 position-relative">
                         <h2 class="mb-0 mt-5"><span>Our</span> Projects</h2>
                         <i class="btm-ln bg-color3"></i>
-                    </div><!-- Sec Title -->
+                    </div>
                     <div class="row ">
                       @foreach ($projects as $project)
                         <div class="col-md-6 col-sm-6 col-lg-4">
@@ -87,7 +536,6 @@ now: '1387461319'
                                     </div>
                                     <p>{{$project->project_description}}</p>
                                 </div>
-
                                 <div  style="background-color:rgb(80, 79, 79); border-radius: 3px">
                                     <div  class="clock{{$loop->index+1}} row py-2">
                                         <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
@@ -193,31 +641,50 @@ now: '1387461319'
                         <i class="btm-ln bg-white"></i>
                     </div><!-- Sec Title -->
                     <div class="cnt-wrap text-center position-relative w-100">
-                        <form class="w-100 d-inline-block" action="#" method="post" id="email-form">
+                        <form class="w-100 d-inline-block" action="{{ route('contact.store') }}" method="post">
+                            @csrf
                             <div class="form-group w-100">
                                 <div class="response w-100"></div>
                             </div>
                             <div class="row mrg20">
                                 <div class="col-md-6 col-sm-6 col-lg-6">
                                     <div class="field-box w-100">
-                                        <input class="fname" type="text" name="fname" placeholder="Your Name"
+                                        <input class="fname" type="text" value="{{old('name')}}" name="name" placeholder="Your Name"
                                             required>
                                     </div>
+                                    @error('name')
+                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                    @enderror
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-lg-6">
                                     <div class="field-box w-100">
-                                        <input class="email" type="email" name="email" placeholder="Your email"
+                                        <input class="email" type="email" value="{{old('email')}}" name="email" placeholder="Your email"
                                             required>
                                     </div>
+                                    @error('email')
+                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                    @enderror
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-lg-12">
                                     <div class="field-box w-100">
-                                        <textarea class="contact_message" name="contact_message" placeholder="Send Message"
-                                            required></textarea>
+                                        <textarea class="contact_message"  name="subject" placeholder=" Subject"
+                                            required>{{old('subject')}}</textarea>
                                     </div>
+                                    @error('subject')
+                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                    @enderror
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-lg-12">
+                                    <div class="field-box w-100">
+                                        <textarea class="contact_message" name="message" placeholder="Message"
+                                            required>{{old('message')}}</textarea>
+                                    </div>
+                                    @error('message')
+                                        <h6 class="text-danger"> {{ $message }}</h6>
+                                    @enderror
                                     <div class="field-btn text-center w-100">
                                         <button class="thm-btn d-inline-block rounded-pill" type="submit">Send
-                                            Request</button>
+                                            Message</button>
                                     </div>
                                 </div>
                             </div>

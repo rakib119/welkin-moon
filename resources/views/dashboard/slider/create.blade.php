@@ -20,6 +20,18 @@
                  ]
                  }
              });
+            $('#title').summernote({
+                popover: {
+                     image: [
+
+                    // This is a Custom Button in a new Toolbar Area
+                    ['custom', ['examplePlugin']],
+                    ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                    ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                    ['remove', ['removeMedia']]
+                 ]
+                 }
+             });
         });
     </script>
 @endsection
@@ -62,12 +74,12 @@
                                             <div class="row">
                                                 <div class="col-lg-6">
                                                     <div class="mb-3">
-                                                        <label class="form-label" for="name">Title
+                                                        <label class="form-label" for="short_description">Short Description
                                                             <span class="text-danger">*</span></label>
-                                                        <input id="title" type="text" class="form-control"
-                                                            value="{{ old('title') }}" name="title"
-                                                            placeholder="Enter Slider title" autofocus>
-                                                        @error('title')
+                                                        <input id="short_description" type="text" class="form-control"
+                                                            value="{{ old('short_description') }}" name="short_description"
+                                                            placeholder="Enter short description" >
+                                                        @error('short_description')
                                                             <h6 class="text-danger"> {{ $message }}</h6>
                                                         @enderror
                                                     </div>
@@ -84,7 +96,18 @@
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-12">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-3">
+                                                        <label  class="form-label" for="name">Title
+                                                            <span class="text-danger">*</span></label>
+                                                        <Textarea autofocus name="title" id="title"
+                                                             class="form-control">{{ old('title') }}</Textarea>
+                                                        @error('title')
+                                                            <h6 class="text-danger"> {{ $message }}</h6>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
                                                     <div class="mb-3">
                                                         <label class="form-label" >Content
                                                             <span class="text-danger">*</span></label>

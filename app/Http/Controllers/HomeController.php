@@ -25,10 +25,13 @@ class HomeController extends Controller
 
      public function index()
     {
+
+
         $teams = Team::all();
         $ceo = Team::where('post', 'Chief Director')->first();
         $faqs = faq::all();
-        return view('fontend.index', compact('teams', 'ceo','faqs'));
+        $sliders = Slider::all();
+        return view('fontend.index', compact('teams', 'ceo','faqs','sliders'));
     }
     public function about()
     {
@@ -49,5 +52,10 @@ class HomeController extends Controller
     public function contactUs()
     {
         return view('fontend.contact');
+    }
+     public function sliderDetails($slug)
+    {
+        $slider = Slider::where('slug',$slug)->first();
+        return view('fontend.slider',compact('slider' ));
     }
 }

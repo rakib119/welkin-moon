@@ -45,7 +45,7 @@
                                         @foreach ( $sliders as $slider)
                                         <tr>
                                             <td>{{$loop->index+1}}</td>
-                                            <td>{{ $slider->title}}</td>
+                                            <td>{!! $slider->title !!}</td>
                                             <td>{{ $slider->button_name}}</td>
                                             <td >
                                                 <!-- Example single danger button -->

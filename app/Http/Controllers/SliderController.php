@@ -40,12 +40,14 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title'=>'required',
+            'title'=>'required|max:255',
+            'short_description'=>'required|max:255',
             'content'=>'required',
-            'button_name'=>'required'
+            'button_name'=>'required|max:255'
         ]);
         Slider::insert([
             'title'=>  $request->title,
+            'short_description'=>$request->short_description,
             'content'=>$request->content,
             'slug'=> Str::slug($request->title) ,
             'button_name' =>$request->button_name,
@@ -87,12 +89,14 @@ class SliderController extends Controller
     public function update(Request $request, slider $slider)
     {
         $request->validate([
-            'title'=>'required',
+            'title'=>'required|max:255',
+            'short_description'=>'required|max:255',
             'content'=>'required',
-            'button_name'=>'required'
+            'button_name'=>'required|max:255'
         ]);
 
         $slider->title =  $request->title;
+        $slider->short_description =  $request->short_description;
         $slider->slug= Str::slug($request->title) ;
         $slider->button_name =$request->button_name;
         $slider->content=$request->content;

@@ -60,7 +60,7 @@
                     <div class="menubar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
                         <div class="logo">
                             <h1 class="mb-0"><a href="{{ route('home') }}" title="Home"><img width="185"
-                                        src="assets/images/logo.png" alt="Logo"></a></h1>
+                                        src="{{asset('assets')}}/images/logo.png" alt="Logo"></a></h1>
                         </div><!-- Logo -->
                         <nav>
                             <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
@@ -87,7 +87,7 @@
                 <div class="menubar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
                     <div class="logo">
                         <h1 class="mb-0"><a href="{{ route('home') }}" title="Home"><img width="185"
-                                    src="assets/images/logo.png" alt="Logo"></a></h1>
+                                    src="{{asset('assets')}}/images/logo.png" alt="Logo"></a></h1>
                     </div><!-- Logo -->
                     <nav>
                         <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
@@ -112,7 +112,7 @@
                 <div class="container d-flex flex-wrap align-items-center justify-content-between">
                     <div class="logo">
                         <h1 class="mb-0"><a href="{{ route('home') }}" title="Home"><img
-                                    class="img-fluid" src="assets/images/logo.png" alt="Logo"></a></h1>
+                                    class="img-fluid" src="{{asset('assets')}}/images/logo.png" alt="Logo"></a></h1>
                     </div><!-- Logo -->
                     <div class="header-btns d-inline-flex flex-wrap align-items-center">
                         <a class="res-menu-btn d-inline-block" href="javascript:void(0);" title=""><i
@@ -123,7 +123,7 @@
             <div class="responsive-menu w-100">
                 <div class="logo">
                     <h1 class="mb-0"><a href="{{ route('home') }}" title="Home"><img class="img-fluid"
-                                src="assets/images/logo.png" alt="Logo"></a></h1>
+                                src="{{asset('assets')}}/images/logo.png" alt="Logo"></a></h1>
                 </div><!-- Logo -->
                 <ul class="mb-0 list-unstyled w-100">
                     <li><a href="{{ route('home') }}" title="">Home</a></li>
@@ -318,6 +318,26 @@
     <script src="{{ asset('assets') }}/js/revolution/extensions/revolution.extension.slideanims.min.js"></script>
     <script src="{{ asset('assets') }}/js/revolution/extensions/revolution.extension.video.min.js"></script>
     <script src="{{ asset('assets') }}/js/revolution/revolution-init.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @if (session('success'))
+        <script>
+            const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 1000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            Toast.fire({
+                icon: 'success',
+                title: "{{ session('success') }}"
+            })
+        </script>
+    @endif
 
     @yield('javascript')
 </body>

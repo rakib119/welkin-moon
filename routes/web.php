@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
@@ -31,7 +32,10 @@ Route::get('/home', [DashboardController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/our-team', [HomeController::class, 'team'])->name('ourteam');
 Route::get('/our-projects', [HomeController::class, 'ourProjects'])->name('our_projects');
-Route::get('/contact', [HomeController::class, 'contactUs'])->name('contact_us');
+Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contact_us');
+Route::get('/slider/{slug}', [HomeController::class, 'sliderDetails'])->name('sliderDetails');
+Route::resource('contact', ContactController::class);
+// backend
 Route::resource('team', TeamController::class);
 Route::resource('slider', SliderController::class);
 Route::resource('faq', FaqController::class);

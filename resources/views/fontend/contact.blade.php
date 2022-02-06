@@ -117,35 +117,49 @@
                                 <h2 class="mb-0">Send a Message</h2>
                                 <i class="btm-ln bg-color3"></i>
                             </div><!-- Sec Title -->
-                            <form action="#" method="post" id="email-form">
+                            <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
+                                @csrf
                                 <div class="form-group w-100">
                                     <div class="response w-100"></div>
                                 </div>
                                 <div class="row mrg10">
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="field-box w-100">
-                                            <input class="name" type="text" name="name" placeholder="Full Name*" required autofocus>
+                                            <input class="name" type="text" value="{{old('name')}}" name="name" placeholder="Full Name*" required autofocus>
                                         </div>
+                                        @error('name')
+                                            <h6 class="text-danger"> {{ $message }}</h6>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="field-box w-100">
-                                            <input class="email" type="email" name="email" placeholder="Email *" required>
+                                            <input class="email" type="email" value="{{old('email')}}" name="email" placeholder="Email *" required>
                                         </div>
+                                        @error('email')
+                                            <h6 class="text-danger">  {{ $message }}</h6>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="field-box w-100">
-                                            <input class="text" type="text" name="subject" placeholder="Subject *" required>
+                                            <input class="text" type="text" value="{{old('subject')}}" name="subject" placeholder="Subject *" required>
                                         </div>
+                                        @error('email')
+                                            <h6 class="text-danger">  {{ $message }}</h6>
+                                        @enderror
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                         <div class="field-box w-100">
-                                            <input class="photos" type="file" name="screenshots[]" placeholder="screenshot" multiple required>
+                                            <input class="photos" type="file" name="screenshots[]" placeholder="screenshot" accept=".jpg,.png" multiple>
                                         </div>
+                                        @error('screenshots.1')
+                                            <h6 class="text-danger">  {{ $message }}</h6>
+                                        @enderror
                                     </div>
                                     <div class="col-md-12 col-sm-12 col-lg-12">
                                         <div class="field-box w-100">
-                                            <textarea class="contact_message" name="contact_message" placeholder="Message" required></textarea>
+                                            <textarea class="contact_message" name="message" placeholder="Message" required> {{old('message')}}</textarea>
                                         </div>
+
                                         <div class="field-btn w-100">
                                             <button class="thm-btn d-inline-block rounded-pill" id="submit" type="submit">Send A Message</button>
                                         </div>
