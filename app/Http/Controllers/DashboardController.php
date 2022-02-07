@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,6 +17,7 @@ class DashboardController extends Controller
     {
         $users =  User::all();
         $teams =  Team::all();
-        return view('dashboard.home.index',compact('users','teams'));
+        $messages =  Contact::where('status',0)->orderBy('id', 'DESC')->get();
+        return view('dashboard.home.index',compact('users','teams','messages'));
     }
 }

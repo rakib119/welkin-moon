@@ -17,7 +17,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.contact.index',['messages'=>Contact:: orderBY('id',"DESC")->get()]);
     }
 
     /**
@@ -80,7 +80,13 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
+        if (  $contact->status == 0) {
+            $contact->status = 1;
+            $contact->updated_by = auth()->id();
+            $contact->save();
+        }
 
+        return view('dashboard.contact.show',['message'=>$contact]);
     }
 
     /**

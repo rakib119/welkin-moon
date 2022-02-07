@@ -116,7 +116,7 @@
                             <div class="sec-title w-100 position-relative">
                                 <h2 class="mb-0">Send a Message</h2>
                                 <i class="btm-ln bg-color3"></i>
-                            </div><!-- Sec Title -->
+                            </div>
                             <form action="{{ route('contact.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group w-100">

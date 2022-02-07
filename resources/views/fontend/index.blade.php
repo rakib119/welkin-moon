@@ -336,7 +336,7 @@ $title = 'Home';
                                 </span>
                                 <div class="extend-serv-box-inner">
                                     <i class="icon-016-customer-review text-color8"></i>
-                                    <h4 class="mb-0 text-uppercase">Welkin Moon <br> Freelancing Marketplace</h4>
+                                    <h4 class="mb-0 text-uppercase">Welkin Moon<br> Freelancing Marketplace</h4>
                                 </div>
                             </div>
                         </div>

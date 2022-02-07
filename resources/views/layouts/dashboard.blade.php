@@ -21,7 +21,7 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="" class="logo logo-dark">
+                        <a href="{{ url('/home')}}" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="22">
                             </span>
@@ -29,7 +29,7 @@
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="20">
                             </span>
                         </a>
-                        <a href="" class="logo logo-light">
+                        <a href="{{ url('/home')}}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="22">
                             </span>
@@ -158,6 +158,18 @@
                                 <li><a href="{{route('project.create')}}">Add Project</a></li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="{{route('contact.index')}}" class="waves-effect">
+                                <i class="fas fa-envelope"></i>
+                                <span>Inbox</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{route('info.create')}}" class="waves-effect">
+                                <i class="fas fa-info-circle"></i>
+                                <span>Information</span>
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -182,7 +194,6 @@
             </div>
         </footer>
     </div>
-
     </div>
     <script src="{{ asset('dashboard/assets/libs/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('dashboard/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
