@@ -16,12 +16,11 @@ class CreateFatherInfosTable extends Migration
         Schema::create('father_infos', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('user_name');
             $table->string('father_name');
             $table->string('father_phone_number');
             $table->string('father_permanent_address');
             $table->text('father_present_address');
-            $table->text('father_address_verification');
+            $table->text('father_address_verification')->nullable();
             $table->string('father_dob');
             $table->string('father_nid_or_passport');
             $table->string('father_occupation');

@@ -36,11 +36,8 @@ class TeamController extends Controller
      */
     public function create()
     {
-        if ( auth()->user()->is_admin == 1) {
             return view('dashboard.team.create');
-        }else {
-            return redirect('/');
-        }
+
     }
 
     /**
@@ -51,7 +48,6 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        if ( auth()->user()->is_admin == 1) {
             $request->validate([
                 'name'=>'required',
                 'img'=>'required|mimes:png,jpg',
@@ -80,10 +76,6 @@ class TeamController extends Controller
            ]);
            return redirect('team')->with('success', 'Team members added successfully');
 
-        }else {
-            return redirect('/');
-        }
-
     }
 
     /**
@@ -105,11 +97,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        if ( auth()->user()->is_admin == 1) {
             return view('dashboard.team.edit',compact('team'));
-        }else {
-            return redirect('/');
-        }
     }
 
     /**

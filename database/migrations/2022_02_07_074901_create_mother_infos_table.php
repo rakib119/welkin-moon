@@ -16,12 +16,11 @@ class CreateMotherInfosTable extends Migration
         Schema::create('mother_infos', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('user_name');
             $table->string('mother_name');
             $table->string('mother_phone_number');
             $table->text('mother_permanent_address');
             $table->text('mother_present_address');
-            $table->integer('mother_address_verification');
+            $table->integer('mother_address_verification')->nullable();
             $table->string('mother_dob');
             $table->string('mother_nid_or_passport');
             $table->string('mother_occupation');

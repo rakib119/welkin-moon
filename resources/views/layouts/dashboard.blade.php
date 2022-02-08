@@ -112,6 +112,12 @@
                             </a>
                         </li>
                         <li>
+                            <a href="{{route('users')}}" class=" waves-effect">
+                                <i class="fa fa-users"> </i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 {{-- <i class="dripicons-users"></i> --}}
                                 <i class="fa fa-users"> </i>
