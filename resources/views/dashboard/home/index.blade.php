@@ -20,16 +20,11 @@
                  <div class="col-sm-6">
                      <div class="page-title">
                          <h4>DashBoard</h4>
-                             <ol class="breadcrumb m-0">
-                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                             </ol>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                            </ol>
                      </div>
                  </div>
-                 {{-- <div class="col-sm-6">
-                    <div class="float-end d-none d-sm-block">
-                        <a href="#" class="btn btn-success">Add Widget</a>
-                    </div>
-                 </div> --}}
              </div>
             </div>
          </div>
@@ -46,7 +41,7 @@
                                             <div class="mini-stat-icon mx-auto mb-4 mt-3">
                                                 <span class="avatar-title rounded-circle bg-soft-primary">
                                                         <i class="mdi mdi-account-multiple-outline text-primary font-size-20"></i>
-                                                    </span>
+                                                </span>
                                             </div>
                                             <h5 class="font-size-22">{{$users->count()}}</h5>
                                         </div>
@@ -57,11 +52,11 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="text-center">
-                                            <p class="font-size-16">Total Users</p>
+                                            <p class="font-size-16">Teams Members</p>
                                             <div class="mini-stat-icon mx-auto mb-4 mt-3">
                                                 <span class="avatar-title rounded-circle bg-soft-primary">
-                                                        <i class="mdi mdi-cart-outline text-primary font-size-20"></i>
-                                                    </span>
+                                                    <i class="mdi mdi-account-multiple-outline text-primary font-size-20"></i>
+                                                </span>
                                             </div>
                                             <h5 class="font-size-22">{{$teams->count()}}</h5>
                                         </div>
@@ -75,8 +70,8 @@
                                             <p class="font-size-16">New Messages</p>
                                             <div class="mini-stat-icon mx-auto mb-4 mt-3">
                                                 <span class="avatar-title rounded-circle bg-soft-primary">
-                                                        <i class="mdi mdi-cart-outline text-primary font-size-20"></i>
-                                                    </span>
+                                                <i class="fas fa-envelope text-primary font-size-20"></i>
+                                                </span>
                                             </div>
                                             <h5 class="font-size-22">{{$messages->count()}}</h5>
                                         </div>
@@ -133,6 +128,8 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Phone</th>
+                                    <th>Details</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -142,6 +139,13 @@
                                     <td>{{ $user->name}}</td>
                                     <td>{{ $user->email}}</td>
                                     <td>{{ $user->phone}}</td>
+                                    <td>
+                                        @if ($user->personalInfo && $user->fatherInfo && $user->motherInfo)
+                                            <a class="btn btn-success" href="{{route('user_details',$user->id)}}">Details</a>
+                                        @else
+                                            <span class="badge bg-warning">Not Available</span>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

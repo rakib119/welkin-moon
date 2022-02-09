@@ -12,8 +12,18 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    // public function getColor()
+    // {
+    //     return $this->hasOne(Color::class, 'id', 'color_id');
+    // }
     public function personalInfo(){
-        return $this->hasOne(PersonalInfo::class,'id','user_id');
+        return $this->hasOne(PersonalInfo::class,'user_id','id');
+    }
+    public function fatherInfo(){
+        return $this->hasOne(PersonalInfo::class,'user_id','id');
+    }
+    public function motherInfo(){
+        return $this->hasOne(PersonalInfo::class,'user_id','id');
     }
     /**
      * The attributes that are mass assignable.

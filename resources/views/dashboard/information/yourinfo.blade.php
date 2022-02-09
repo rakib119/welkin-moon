@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <div class="d-flex justify-content-between">
-            <h2>Add Information</h2>
+            <h2>Personal Information</h2>
             <a href="{{ url()->previous() }}" class="btn btn-success">Back</a>
         </div>
         <div class="form py-3">
@@ -66,7 +66,7 @@
                                 <h6 class="text-danger"> {{ $message }}</h6>
                             @enderror
                         </div>
-                    </div> 
+                    </div>
                     <div class="col-lg-6">
                         <div class="mb-3">
                             <label class="form-label" for="gender">Gender

@@ -15,19 +15,18 @@ class DashboardController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        // $this->middleware('admin');
+        $this->middleware('admin');
     }
     public function index()
     {
-        $users =  User::all();
+        $users = User::orderBy('id','DESC')->get();
         $teams =  Team::all();
         $messages =  Contact::where('status',0)->orderBy('id', 'DESC')->get();
         return view('dashboard.home.index',compact('users','teams','messages'));
     }
     public function users()
     {
-
-        $users =  User::all();
+        $users =  User::orderBy('id','DESC')->get();
         return view('dashboard.users',compact('users'));
     }
     public function userDetails($id)

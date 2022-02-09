@@ -13,9 +13,9 @@ $title = 'About';
                         <div class="extend-serv-box v2 text-center w-100 position-relative">
                             <span><i class="icon-006-data"></i></span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">SEO Optimization</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">SEO Optimization</a></h3>
                                 <p class="mb-0">Pha tristique elementum augue, eu egestas est iaculis eget. Quisque lectus felis, iaculis eget fermentum.</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -23,9 +23,9 @@ $title = 'About';
                         <div class="extend-serv-box v2 text-center w-100 position-relative">
                             <span><i class="icon-024-banner"></i></span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Digital Marketing</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Digital Marketing</a></h3>
                                 <p class="mb-0">Ut ut pretium vivamus sollicitudin. sem eu nisi imperdiet faucibus. Integer tempor ipsum mattis pellentesque</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -33,9 +33,9 @@ $title = 'About';
                         <div class="extend-serv-box v2 text-center w-100 position-relative">
                             <span><i class="icon-023-bullhorn"></i></span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Social Marketing</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Social Marketing</a></h3>
                                 <p class="mb-0">Sed tristique elementum augue, eu egestas est iaculis eget. Quisque lectus felis, iaculis eget fermentum.</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -140,7 +140,7 @@ $title = 'About';
                                 <li>Fermentum mauris faucibus quam, pharetra nunc</li>
                                 <li>Dolor eu nulla pellentesque aliquam faucibus.</li>
                             </ul>
-                            <a class="thm-btn rounded-pill d-inline-block" href="our-story.html" title="">Our Story</a>
+                            <a class="thm-btn rounded-pill d-inline-block" href="javascript:void(0)" title="">Our Story</a>
                         </div>
                     </div>
                 </div>
@@ -164,9 +164,9 @@ $title = 'About';
                                 <i class="icon-019-target-1"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Being Relevant</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Being Relevant</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -177,9 +177,9 @@ $title = 'About';
                                 <i class="icon-039-motivation"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Memorable Branding</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Memorable Branding</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -190,9 +190,9 @@ $title = 'About';
                                 <i class="flaticon-heart"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Positive Impact</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Positive Impact</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -203,9 +203,9 @@ $title = 'About';
                                 <i class="icon-020-laptop"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Cross-functionaled</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Cross-functionaled</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -216,9 +216,9 @@ $title = 'About';
                                 <i class="icon-015-target"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Multidisciplinary Team</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Multidisciplinary Team</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>
@@ -229,9 +229,9 @@ $title = 'About';
                                 <i class="icon-008-startup-1"></i>
                             </span>
                             <div class="serv-info2 w-100">
-                                <h3 class="mb-0"><a href="seo-services.html" title="">Recent Technology</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Recent Technology</a></h3>
                                 <p class="mb-0">Phasellus sit amet libero turpis. Nunc aliquet, sapien in fermentum fermentum, libero</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="seo-services.html" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read More<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                     </div>

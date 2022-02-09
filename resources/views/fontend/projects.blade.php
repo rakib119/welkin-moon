@@ -1,6 +1,8 @@
 @php
-$title = 'Our Projects';
+    $title = 'Our Projects';
+    $total_project = $projects->count();
 @endphp
+
 @extends('layouts.fontend')
 @section('css')
 <style>
@@ -60,456 +62,56 @@ now: '1387461319'
 {{-- <script src="{{asset('assets/js/timmer.js')}}"> </script> --}}
 <script>
     $(document).ready(function() {
-    $('.clock1').final_countdown({
-    start: '1362139200',
-    end: '1388461320',
-    now: '1387461319',
-    selectors: {
-        value_seconds: '.clock-seconds .val',
-        canvas_seconds: 'canvas_seconds1',
-        value_minutes: '.clock-minutes .val',
-        canvas_minutes: 'canvas_minutes1',
-        value_hours: '.clock-hours .val',
-        canvas_hours: 'canvas_hours1',
-        value_days: '.day .val',
-        canvas_days: 'canvas_days1',
+        var total = {{$total_project}};
+        var clock,canvas_seconds,canvas_minutes,canvas_hours,canvas_days;
+        for (var i = 1; i <= total; i++) {
+            clock = '.clock'+i;
+            canvas_seconds = "canvas_seconds"+i;
+            canvas_minutes = 'canvas_minutes'+i;
+            canvas_hours = 'canvas_hours'+i;
+            canvas_hours = 'canvas_hours'+i;
+            canvas_days = 'canvas_days'+i;
+            $(clock).final_countdown({
+                start: '1362139200',
+                end: '1388461320',
+                now: '1387461319',
+                selectors: {
+                    value_seconds: '.clock-seconds .val',
+                    canvas_seconds: canvas_seconds,
+                    value_minutes: '.clock-minutes .val',
+                    canvas_minutes: canvas_minutes,
+                    value_hours: '.clock-hours .val',
+                    canvas_hours: canvas_hours,
+                    value_days: '.day .val',
+                    canvas_days: canvas_days,
 
-    },
-    seconds: {
-        borderColor: '#7995D5',
-        borderWidth: '6'
-    },
-    minutes: {
-        borderColor: '#ACC742',
-        borderWidth: '6'
-    },
-    hours: {
-        borderColor: '#ECEFCB',
-        borderWidth: '6'
-    },
-    days: {
-        borderColor: '#FF9900',
-        borderWidth: '6'
-    }}, function() {
-    // Finish callback
-    });
-
-    $('.clock2').final_countdown({
-    start: '1362139200',
-    end: '1388461320',
-    now: '1387461319',
-    selectors: {
-        value_seconds: '.clock-seconds .val',
-        canvas_seconds: 'canvas_seconds2',
-        value_minutes: '.clock-minutes .val',
-        canvas_minutes: 'canvas_minutes2',
-        value_hours: '.clock-hours .val',
-        canvas_hours: 'canvas_hours2',
-        value_days: '.day .val',
-        canvas_days: 'canvas_days2',
-
-    },
-    seconds: {
-        borderColor: '#7995D5',
-        borderWidth: '6'
-    },
-    minutes: {
-        borderColor: '#ACC742',
-        borderWidth: '6'
-    },
-    hours: {
-        borderColor: '#ECEFCB',
-        borderWidth: '6'
-    },
-    days: {
-        borderColor: '#FF9900',
-        borderWidth: '6'
-    }}, function() {
-    // Finish callback
-    });
-
-    $('.clock3').final_countdown({
-    start: '1362139200',
-    end: '1388461320',
-    now: '1387461319',
-    selectors: {
-        value_seconds: '.clock-seconds .val',
-        canvas_seconds: 'canvas_seconds3',
-        value_minutes: '.clock-minutes .val',
-        canvas_minutes: 'canvas_minutes3',
-        value_hours: '.clock-hours .val',
-        canvas_hours: 'canvas_hours3',
-        value_days: '.day .val',
-        canvas_days: 'canvas_days3',
-
-    },
-    seconds: {
-        borderColor: '#7995D5',
-        borderWidth: '6'
-    },
-    minutes: {
-        borderColor: '#ACC742',
-        borderWidth: '6'
-    },
-    hours: {
-        borderColor: '#ECEFCB',
-        borderWidth: '6'
-    },
-    days: {
-        borderColor: '#FF9900',
-        borderWidth: '6'
-    }}, function() {
-    // Finish callback
-    });
-
-//     $('.clock4').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds4',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes4',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours4',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days4',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-//     $('.clock5').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds5',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes5',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours5',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days5',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-//     $('.clock6').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds6',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes6',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours6',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days6',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-//   $('.clock7').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds7',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes7',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours7',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days7',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-//  $('.clock8').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds8',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes8',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours8',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days8',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-//  $('.clock9').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds9',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes9',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours9',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days9',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-// $('.clock10').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds10',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes10',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours10',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days10',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-
-// $('.clock11').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds11',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes11',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours11',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days11',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-// $('.clock12').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds12',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes12',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours12',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days12',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-// $('.clock13').final_countdown({
-//     start: '1362139200',
-//     end: '1388461320',
-//     now: '1387461319',
-//     selectors: {
-//         value_seconds: '.clock-seconds .val',
-//         canvas_seconds: 'canvas_seconds13',
-//         value_minutes: '.clock-minutes .val',
-//         canvas_minutes: 'canvas_minutes13',
-//         value_hours: '.clock-hours .val',
-//         canvas_hours: 'canvas_hours13',
-//         value_days: '.day .val',
-//         canvas_days: 'canvas_days13',
-
-//     },
-//     seconds: {
-//         borderColor: '#7995D5',
-//         borderWidth: '6'
-//     },
-//     minutes: {
-//         borderColor: '#ACC742',
-//         borderWidth: '6'
-//     },
-//     hours: {
-//         borderColor: '#ECEFCB',
-//         borderWidth: '6'
-//     },
-//     days: {
-//         borderColor: '#FF9900',
-//         borderWidth: '6'
-//     }}, function() {
-//     // Finish callback
-//     });
-
-
-    });
-
+                },
+                seconds: {
+                    borderColor: '#7995D5',
+                    borderWidth: '6'
+                },
+                minutes: {
+                    borderColor: '#ACC742',
+                    borderWidth: '6'
+                },
+                hours: {
+                    borderColor: '#ECEFCB',
+                    borderWidth: '6'
+                },
+                days: {
+                    borderColor: '#FF9900',
+                    borderWidth: '6'
+                }},
+                 function() {
+                // Finish callback
+        });
+    }
+});
 
 </script>
 @endsection
 @section('main_content')
+
     <main>
         <section>
             <div class="w-100 pt-100 bg-color10 pb-100 position-relative">
@@ -524,8 +126,8 @@ now: '1387461319'
                         <i class="btm-ln bg-color3"></i>
                     </div>
                     <div class="row ">
-                      @foreach ($projects as $project)
-                        <div class="col-md-6 col-sm-6 col-lg-4">
+                    @foreach ($projects as $project)
+                        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-4 mb-5">
                             <div class="post-box brd-rd15 w-100">
                                 <div class="post-info ">
                                     <div class="position-relative text-center">
@@ -538,7 +140,7 @@ now: '1387461319'
                                 </div>
                                 <div  style="background-color:rgb(80, 79, 79); border-radius: 3px">
                                     <div  class="clock{{$loop->index+1}} row py-2">
-                                        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+                                        <div class="clock-item clock-days countdown-time-value " style="width: 25%">
                                             <div class="wrap">
                                                 <div class="inner">
                                                     <div id="canvas_days{{$loop->index+1}}" class="clock-canvas"></div>
@@ -551,7 +153,7 @@ now: '1387461319'
                                             </div>
                                         </div>
                                         <!-- hours -->
-                                        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+                                        <div class="clock-item clock-hours countdown-time-value " style="width: 25%">
                                             <div class="wrap">
                                                 <div class="inner">
                                                     <div id="canvas_hours{{$loop->index+1}}" class="clock-canvas"></div>
@@ -564,7 +166,7 @@ now: '1387461319'
                                             </div>
                                         </div>
                                         <!-- minutes -->
-                                        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+                                        <div class="clock-item clock-minutes countdown-time-value " style="width: 25%">
                                             <div class="wrap">
                                                 <div class="inner">
                                                     <div id="canvas_minutes{{$loop->index+1}}" class="clock-canvas"></div>
@@ -577,7 +179,7 @@ now: '1387461319'
                                             </div>
                                         </div>
                                             <!-- seconds -->
-                                        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3 ">
+                                        <div class="clock-item clock-seconds countdown-time-value"   style="width: 25%">
                                             <div class="wrap">
                                                 <div class="inner">
                                                     <div id="canvas_seconds{{$loop->index+1}}" class="clock-canvas"></div>
@@ -607,7 +209,7 @@ now: '1387461319'
                     <div class="blog-wrap list-view d-inline-block position-relative w-100">
                         <div class="post-box schm-14 brd-rd15 w-100">
                             <div class="post-img overflow-hidden position-relative w-100">
-                                <a href="blog-detail.html" title=""><img class="img-fluid w-100"
+                                <a href="javascript:void(0)" title=""><img class="img-fluid w-100"
                                         src="assets/images/resources/post-img1-6.jpg" alt="Post Image 6" height="329"
                                         width="585"></a>
                                 <span
@@ -616,21 +218,20 @@ now: '1387461319'
                             <div class="post-info w-100">
                                 <span class="post-cate d-block text-uppercase"><a href="javascript:void(0);"
                                         title="">Marketing</a></span>
-                                <h3 class="mb-0"><a href="blog-detail.html" title="">Elegant style</a></h3>
+                                <h3 class="mb-0"><a href="javascript:void(0)" title="">Elegant style</a></h3>
                                 <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
                                     eget orci non nunc iaculis lobortis. Vestibulum pretium...</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="blog-detail.html" title="">Read
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Read
                                     More<i class="flaticon-right-arrow text-color14"></i></a>
                             </div>
                         </div>
                     </div><!-- Blog Wrap -->
                     <div class="view-all d-inline-block mt-60 w-100 text-center position-relative z2">
-                        <a class="thm-btn v2 rounded-pill d-inline-block" href="blog-3column.html" title="">Go To Blog</a>
+                        <a class="thm-btn v2 rounded-pill d-inline-block" href="javascript:void(0)" title="">Go To Blog</a>
                     </div><!-- View All -->
                 </div>
             </div>
         </section>
-
         <section>
             <div class="w-100 pt-130 pb-70 position-relative">
                 <div class="fixed-bg back-size-cont bg-norepeate"
@@ -647,7 +248,7 @@ now: '1387461319'
                                 <div class="response w-100"></div>
                             </div>
                             <div class="row mrg20">
-                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div class="col-md-6 col-sm-3 col-lg-6">
                                     <div class="field-box w-100">
                                         <input class="fname" type="text" value="{{old('name')}}" name="name" placeholder="Your Name"
                                             required>
@@ -656,7 +257,7 @@ now: '1387461319'
                                         <h6 class="text-danger"> {{ $message }}</h6>
                                     @enderror
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div class="col-md-6 col-sm-3 col-lg-6">
                                     <div class="field-box w-100">
                                         <input class="email" type="email" value="{{old('email')}}" name="email" placeholder="Your email"
                                             required>

@@ -58,4 +58,8 @@ class HomeController extends Controller
         $slider = Slider::where('slug',$slug)->first();
         return view('fontend.slider',compact('slider' ));
     }
+     public function test()
+    {
+        return view('fontend.test');
+    }
 }

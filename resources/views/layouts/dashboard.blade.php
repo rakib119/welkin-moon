@@ -14,6 +14,15 @@
     {{-- CSS Yield --}}
     @yield('css')
 </head>
+@php
+if (Auth::check()){
+    if (auth()->user()->is_admin) {
+        $home_link =  url('/home');
+    }else{
+        $home_link =  route('info.create');
+    }
+}
+@endphp
 <body>
     <div id="layout-wrapper">
         <header id="page-topbar" style="background-color: #7D85EC;">
@@ -21,7 +30,7 @@
                 <div class="d-flex">
                     <!-- LOGO -->
                     <div class="navbar-brand-box">
-                        <a href="{{ url('/home')}}" class="logo logo-dark">
+                        <a href="{{$home_link}}" class="logo logo-dark">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="22">
                             </span>
@@ -29,7 +38,7 @@
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="20">
                             </span>
                         </a>
-                        <a href="{{ url('/home')}}" class="logo logo-light">
+                        <a href="{{$home_link}}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="{{ asset('assets/images/wm2.png') }}" alt="" height="22">
                             </span>
@@ -42,15 +51,6 @@
                         id="vertical-menu-btn">
                         <i class="mdi mdi-menu"></i>
                     </button>
-                    <!-- <div class="topbar-social-icon me-3 d-none d-md-block">
-                        <ul class="list-inline title-tooltip m-0">
-                            <li class="list-inline-item">
-                                <a href="email-inbox.html" data-bs-toggle="tooltip" data-placement="top" title="Email">
-                                 <i class="mdi mdi-email-outline"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> -->
                 </div>
                 <div class="d-flex">
                     <div class="dropdown d-none d-lg-inline-block ms-1">
@@ -88,88 +88,78 @@
         </header>
         <div class="vertical-menu">
             <div data-simplebar class="h-100">
-                <!-- <div class="user-sidebar text-center">
-                    <div class="dropdown">
-                        <div class="user-img">
-                            <img src="{{ asset('dashboard/assets/images/users/avatar-7.jpg') }}" alt="" class="rounded-circle">
-                            <span class="avatar-online bg-success"></span>
-                        </div>
-                        <div class="user-info">
-                            <h5 class="mt-3 font-size-16 text-white">James Raphael</h5>
-                            <span class="font-size-13 text-white-50">Administrator</span>
-                        </div>
-                    </div>
-                </div> -->
-                <!--- Sidemenu -->
                 <div id="sidebar-menu">
                     <!-- Left Menu Start -->
                     <ul class="metismenu list-unstyled" id="side-menu">
                         <li class="menu-title">Menu</li>
-                        <li>
-                            <a href="{{url('home')}}" class="waves-effect">
-                                <i class="dripicons-home"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{route('users')}}" class=" waves-effect">
-                                <i class="fa fa-users"> </i>
-                                <span>Users</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                {{-- <i class="dripicons-users"></i> --}}
-                                <i class="fa fa-users"> </i>
-                                <span>Teams</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('team.index')}}">All Members</a></li>
-                                <li><a href="{{route('team.create')}}">Add Members</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="fas fa-sliders-h"></i>
-                                <span>Slider</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('slider.index')}}">Slider List</a></li>
-                            </ul>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('slider.create')}}">Add Slider</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="fas fa-quote-right"></i>
-                                <span>Faq </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('faq.index')}}">Faq List</a></li>
-                            </ul>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('faq.create')}}">Add Faq</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="fas fa-project-diagram"></i>
-                                <span>Our Project</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('project.index')}}">Project list</a></li>
-                            </ul>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="{{route('project.create')}}">Add Project</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="{{route('contact.index')}}" class="waves-effect">
-                                <i class="fas fa-envelope"></i>
-                                <span>Inbox</span>
-                            </a>
-                        </li>
+                        @if (auth()->user()->is_admin)
+                            <li>
+                                <a href="{{url('home')}}" class="waves-effect">
+                                    <i class="dripicons-home"></i>
+                                    <span>Dashboard</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{route('users')}}" class=" waves-effect">
+                                    <i class="fa fa-users"> </i>
+                                    <span>Users</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    {{-- <i class="dripicons-users"></i> --}}
+                                    <i class="fa fa-users"> </i>
+                                    <span>Teams</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('team.index')}}">All Members</a></li>
+                                    <li><a href="{{route('team.create')}}">Add Members</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-sliders-h"></i>
+                                    <span>Slider</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('slider.index')}}">Slider List</a></li>
+                                </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('slider.create')}}">Add Slider</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-quote-right"></i>
+                                    <span>Faq </span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('faq.index')}}">Faq List</a></li>
+                                </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('faq.create')}}">Add Faq</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="fas fa-project-diagram"></i>
+                                    <span>Our Project</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('project.index')}}">Project list</a></li>
+                                </ul>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="{{route('project.create')}}">Add Project</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{{route('contact.index')}}" class="waves-effect">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Inbox</span>
+                                </a>
+                            </li>
+
+                        @endif
                         <li>
                             <a href="{{route('info.create')}}" class="waves-effect">
                                 <i class="fas fa-info-circle"></i>

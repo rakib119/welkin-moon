@@ -1,7 +1,7 @@
 <div class="card">
     <div class="card-body">
         <div class="d-flex justify-content-between">
-            <h2>Add Information</h2>
+            <h2>Personal  Information</h2>
         </div>
         <div class="form py-3">
             <div class="row">

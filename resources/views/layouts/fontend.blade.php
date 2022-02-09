@@ -19,49 +19,31 @@
     <link rel="stylesheet" href="{{ asset('assets') }}/css/slick.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/style.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/css/responsive.css">
-    <!-- Revolution Style Sheets -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/revolution/settings.css">
-    <!-- Revolution Layers Styles -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/revolution/layers.css">
-    <!-- Revolution Navigation Styles -->
     <link rel="stylesheet" href="{{ asset('assets') }}/css/revolution/navigation.css">
     @yield('css')
 </head>
+@php
+if (Auth::check()){
+    if (auth()->user()->is_admin) {
+        $home_link =  url('/home');
+    }else{
+        $home_link =  route('info.create');
+    }
+}
+@endphp
 
 <body>
     <main>
         <header class="style1 w-100">
-            {{-- <div class="topbar bg-color4 w-100">
-                <div class="container">
-                    <div class="topbar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
-                        <ul class="top-info-links d-inline-flex flex-wrap align-items-center list-unstyled mb-0">
-                            <li><i class="flaticon-telephone-auricular-with-cable"></i><a href="tel:+8801764895137"
-                                    title="">+8801764895137</a></li>
-                            <li><i class="flaticon-email"></i><a href="mailto:info@welkinmoon.com"
-                                    title="">info@welkinmoon.com</a></li>
-                        </ul>
-                        <div class="social-cart d-inline-flex flex-wrap align-items-center">
-                            <div class="social-links d-inline-flex flex-wrap">
-                                <a href="https://www.facebook.com/" title="Facebook" target="_blank"><i
-                                        class="flaticon-facebook"></i></a>
-                                <a href="https://twitter.com/" title="Twitter" target="_blank"><i
-                                        class="flaticon-twitter-letter-logo"></i></a>
-                                <a href="https://youtube.com/" title="Youtube" target="_blank"><i
-                                        class="flaticon-youtube"></i></a>
-                                <a href="https://linkedin.com/" title="Linkedin" target="_blank"><i
-                                        class="flaticon-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><!-- Topbar --> --}}
             <div class="menubar w-100">
                 <div class="container">
                     <div class="menubar-inner d-flex flex-wrap align-items-center justify-content-between w-100">
                         <div class="logo">
                             <h1 class="mb-0"><a href="{{ route('home') }}" title="Home"><img width="185"
                                         src="{{asset('assets')}}/images/logo.png" alt="Logo"></a></h1>
-                        </div><!-- Logo -->
+                        </div>
                         <nav>
                             <ul class="d-inline-flex flex-wrap align-items-center mb-0 list-unstyled">
                                 <li><a href="{{ route('home') }}" title="">Home</a></li>
@@ -70,7 +52,14 @@
                                 <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                                 <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
                                 @if (Auth::check())
-                                    <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                                    <li><a href="{{$home_link }}" title="">Dashboard</a></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                            class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
                                 @else
                                     <li><a href="{{ route('login') }}" title="">Login</a></li>
                                     <li><a href="{{ route('register') }}" title="">Registration</a></li>
@@ -97,7 +86,14 @@
                             <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                             <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
                             @if (Auth::check())
-                                <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                                <li><a href="{{$home_link }}" title="">Dashboard</a></li>
+                                <li>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        class="d-none">
+                                        @csrf
+                                    </form>
+                                </li>
                             @else
                                 <li><a href="{{ route('login') }}" title="">Login</a></li>
                                 <li><a href="{{ route('register') }}" title="">Registration</a></li>
@@ -132,7 +128,14 @@
                     <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                     <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
                     @if (Auth::check())
-                      <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+                      <li><a href="{{$home_link }}" title="">Dashboard</a></li>
+                      <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                            class="d-none">
+                            @csrf
+                        </form>
+                    </li>
                      @else
                         <li><a href="{{ route('login') }}" title="">Login</a></li>
                         <li><a href="{{ route('register') }}" title="">Registration</a></li>
@@ -179,7 +182,15 @@
                                         <li><a href="{{ route('our_projects') }}" title="">Our Projects</a></li>
                                         <li><a href="{{ route('contact_us') }}" title="">Contacts</a></li>
                                         @if (Auth::check())
-                                            <li><a href="{{ url('/home') }}" title="">Dashboard</a></li>
+
+                                            <li><a href="{{$home_link }}" title="">Dashboard</a></li>
+                                            <li>
+                                                <a href="{{ route('logout') }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();"> {{ __('Logout') }}</a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </li>
                                         @else
                                             <li><a href="{{ route('login') }}" title="">Login</a></li>
                                             <li><a href="{{ route('register') }}" title="">Registration</a></li>

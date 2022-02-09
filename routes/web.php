@@ -33,6 +33,7 @@ Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/our-team', [HomeController::class, 'team'])->name('ourteam');
 Route::get('/our-projects', [HomeController::class, 'ourProjects'])->name('our_projects');
 Route::get('/contact-us', [HomeController::class, 'contactUs'])->name('contact_us');
+Route::get('/test', [HomeController::class, 'test'])->name('test');
 Route::get('/slider/details/{slug}', [HomeController::class, 'sliderDetails'])->name('sliderDetails');
 Route::resource('contact', ContactController::class);
 // backend
@@ -43,7 +44,7 @@ Route::resource('team', TeamController::class);
 Route::resource('slider', SliderController::class);
 Route::resource('faq', FaqController::class);
 Route::resource('project', ProjectController::class);
-Route::post('/your/info', [InformationController::class, 'your_info'])->name('your_info');
+Route::post('/personal/info', [InformationController::class, 'your_info'])->name('your_info');
 Route::post('/father/info', [InformationController::class, 'father_info'])->name('father_info');
 Route::post('/about/info', [InformationController::class, 'mother_info'])->name('mother_info');
 Route::get('/info/create', [InformationController::class, 'create'])->name('info.create');

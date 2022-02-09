@@ -43,7 +43,7 @@ $title = 'Home';
                                     <i class="btm-ln bg-color3"></i>
                                 </div><!-- Sec Title -->
                                 <p class="mb-0">Nam quis accumsan risus. Aenean id volutpat nibh. Nullam mollis elit pellentesque, gravida turpis id, aliquam magna. Donec dictum tortor eu arcu lacinia rutrum.</p>
-                                <a class="simple-link d-inline-block text-uppercase" href="about.html" title="">Know How<i class="flaticon-right-arrow text-color3"></i></a>
+                                <a class="simple-link d-inline-block text-uppercase" href="javascript:void(0)" title="">Know How<i class="flaticon-right-arrow text-color3"></i></a>
                             </div>
                         </div>
                         <div class="col-md-12 col-sm-12 col-lg-7">
@@ -252,7 +252,7 @@ $title = 'Home';
                                     <i class="btm-ln bg-color3"></i>
                                 </div><!-- Sec Title -->
                                 <p class="mb-0">Nam quis accumsan risus. Aenean id volutpat nibh. Nullam mollis elit pellentesque, gravida turpis id, aliquam magna. Donec dictum tortor <br> eu arcu lacinia rutrum.</p>
-                                <a class="thm-btn rounded-pill d-inline-block" href="about.html" title="">Make Your Strategy</a>
+                                <a class="thm-btn rounded-pill d-inline-block" href="javascript:void(0)" title="">Make Your Strategy</a>
                             </div>
                         </div>
                     </div>
@@ -282,7 +282,7 @@ $title = 'Home';
                                     <li>Web site Analysis</li>
                                     <li>Web site Analysis</li>
                                 </ul>
-                                <a class="thm-btn rounded-pill d-inline-block" href="contact.html" title="">Contact Department</a>
+                                <a class="thm-btn rounded-pill d-inline-block" href="javascript:void(0)" title="">Contact Department</a>
                             </div>
                         </div>
                     </div>
@@ -556,8 +556,8 @@ $title = 'Home';
                                     <h5 class="mb-0">{{ $team->name }}</h5>
                                     <span class="d-block">{{ $team->post }}</span>
                                 </div>
-                                <div style="text-align: left!important">
-                                    <p class=" mb-0">{!! Str::substr($team->description, 0, 100)  !!}</p>
+                                <div class="social-links  my-3">
+                                    <button class="thm-btn rounded-pill d-inline-block" data-bs-toggle="modal" data-bs-target="#exampleModal{{$team->id}}"> <h6>Quote</h6> </button>
                                 </div>
                                 <div class="social-links v2 d-inline-flex flex-wrap">
                                     <a href="{{ $team->facebook }}" title="Facebook" target="_blank"><i
@@ -565,7 +565,7 @@ $title = 'Home';
                                     <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
                                             class="flaticon-twitter-letter-logo"></i></a>
                                     <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
-                                            class="flaticon-telegram"></i></a>
+                                            class="flaticon-linkedin"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -624,5 +624,22 @@ $title = 'Home';
             </div>
         </div>
     </section>
-
+    @foreach ($teams->where('in_home', 1) as $team)
+        <div class="modal fade" id="exampleModal{{$team->id}}" tabindex="-1" aria-labelledby="exampleModal{{$team->id}}Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{$team->name}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {!!$team->description!!}
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

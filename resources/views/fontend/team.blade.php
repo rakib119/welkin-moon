@@ -97,7 +97,7 @@ $title = 'Our Team';
                         <h2 class="mb-0">Our Team</h2>
                         <i class="btm-ln bg-color3"></i>
                     </div><!-- Sec Title -->
-                    <div class="team-wrap w-100">
+                    {{-- <div class="team-wrap w-100">
                         <div class="row mrg30">
                             @foreach ($teams->where('is_featured', 0) as $team)
                                 <div class="col-md-6 col-sm-6 col-lg-3">
@@ -105,20 +105,55 @@ $title = 'Our Team';
                                         <div class="team-img w-100"><a href="javascript:void(0);" title=""><img class="img-fluid w-100"
                                             src="{{ asset('assets/images/teams') . '/' . $team->img }}"
                                             alt="not found" style="height: 300px; width:300px"></a></div>
+
                                         <div class="team-info w-100">
                                             <h3 class="mb-0"><a href="javascript:void(0);" title="">{{ $team->name }}</a></h3>
                                             <span class="d-block"><a href="javascript:void(0);" title="">{{ $team->post }}</a></span>
+                                            <div class="social-links  my-3">
+                                                <button class="thm-btn rounded-pill d-inline-block" data-bs-toggle="modal" data-bs-target="#exampleModal{{$team->id}}">Quote</button>
+                                            </div>
                                             <div class="social-links v2 d-inline-flex flex-wrap">
                                                  <a href="{{ $team->facebook }}" title="Facebook" target="_blank"><i
                                                     class="flaticon-facebook"></i></a>
-                                            <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
-                                                    class="flaticon-twitter-letter-logo"></i></a>
-                                            <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
-                                                    class="flaticon-linkedin"></i></a>
+                                                <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
+                                                        class="flaticon-twitter-letter-logo"></i></a>
+                                                <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
+                                                        class="flaticon-linkedin"></i></a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            @endforeach
+                        </div>
+                    </div> --}}
+                    <div class="testi-wrap position-relative w-100">
+                        <div class="row schm-14 testi-caro2">
+                            @foreach ($teams->where('is_featured', 0) as $team)
+                            <div class="col-md-6 col-sm-6 col-lg-6">
+                                <div class="testi-box schm-14 position-relative text-center w-100">
+                                    <div class="testi-img d-inline-block overflow-hidden rounded-circle"><img
+                                            class="img-fluid d-inline-block rounded-circle"
+                                            style="height: 120px;width:150px"
+                                            src="{{ asset('assets/images/teams') . '/' . $team->img }}"
+                                            alt="not found">
+                                    </div>
+                                    <div class="testi-info w-100">
+                                        <h5 class="mb-0">{{ $team->name }}</h5>
+                                        <span class="d-block">{{ $team->post }}</span>
+                                    </div>
+                                    <div class="social-links  my-3">
+                                        <button class="thm-btn rounded-pill d-inline-block" data-bs-toggle="modal" data-bs-target="#exampleModal{{$team->id}}">Quote</button>
+                                    </div>
+                                    <div class="social-links v2 d-inline-flex flex-wrap">
+                                        <a href="{{ $team->facebook }}" title="Facebook" target="_blank"><i
+                                                class="flaticon-facebook"></i></a>
+                                        <a href="{{ $team->twitter }}" title="Twitter" target="_blank"><i
+                                                class="flaticon-twitter-letter-logo"></i></a>
+                                        <a href="{{ $team->linkedin }}" title="Linkedin" target="_blank"><i
+                                                class="flaticon-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -126,4 +161,22 @@ $title = 'Our Team';
             </div>
         </section>
     </main>
+    @foreach ($teams->where('is_featured', 0) as $team)
+        <div class="modal fade" id="exampleModal{{$team->id}}" tabindex="-1" aria-labelledby="exampleModal{{$team->id}}Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{$team->name}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    {!!$team->description!!}
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    @endforeach
 @endsection

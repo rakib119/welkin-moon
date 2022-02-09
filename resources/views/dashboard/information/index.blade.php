@@ -11,7 +11,7 @@
                         <div class="page-title">
                             <h4>Add Information</h4>
                             <ol class="breadcrumb m-0">
-                                <li class="breadcrumb-item"><a href="index.php">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
                                 <li class="breadcrumb-item  "><a href="javascript:void(0)">Information</a>
                                 <li class="breadcrumb-item active">Add Information</li>
                             </ol>
